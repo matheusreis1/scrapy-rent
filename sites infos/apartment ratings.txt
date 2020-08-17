@@ -1,0 +1,22 @@
+"apartmentratings": {
+    title,
+    street,
+    city,
+    zip,
+    phone,
+    floorplans,
+    images,
+    ratings and reviews,
+    features and amenities,
+    floorplans and pricing,
+    description,
+    office hours,
+    questions and answers,
+    images from apartment,
+    images from floorplans,
+    similar properties,
+    small description,
+    nearby cities,
+    nearby zipcodes,
+    related searches
+}

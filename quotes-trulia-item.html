@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  
+    <meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(3),u=e(4),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],t),e}finally{f.emit("fn-end",[c.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){if(!o)return!1;if(e!==o)return!1;if(!n)return!0;if(!i)return!1;for(var t=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var u=navigator.userAgent,f=u.match(a);f&&u.indexOf("Chrome")===-1&&u.indexOf("Chromium")===-1&&(o="Safari",i=f[1])}n.exports={agent:o,version:i,match:r}},{}],3:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],4:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],5:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=v(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||o(t)}function w(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(3),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!E++){var e=x.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+x.offset],null,"api");var t=l.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===l.readyState&&i()}function i(){f("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-x.offset}var u=(new Date).getTime(),f=e("handle"),c=e(3),s=e("ee"),p=e(2),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1118.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=n.exports={offset:u,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),l[m]?(l[m]("DOMContentLoaded",i,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",o),d[v]("onload",r)),f("mark",["firstbyte",u],null,"api");var E=0,O=e(5)},{}]},{},["loader"]);</script>
+    
+  
+
+      <meta name="csrft" value="KtwKErIG1OnxN5DuBRdofvLYIsMzPKQ6GBhGxa/0Ffk=">
+  
+  
+      
+
+  
+  
+
+  <title>2810 6th Ave N, Texas City, TX 77590 - 3 Bed, 2 Bath Single-Family Home - MLS #5078614 - 36 Photos | Trulia</title>
+
+  
+  <meta name="description" content="2810 6th Ave N, Texas City, TX is a 1300 sq ft, 3 bed, 2 bath home listed on Trulia for $119,998 in Texas City, Texas.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, minimal-ui">
+
+
+  
+
+  
+    <link rel="manifest" href="/manifest">
+  
+
+  
+
+      <meta property="og:image" content="//thumbs.trulia-cdn.com/pictures/thumbs_3/zillowstatic/ISi750fxpht4og0000000000.jpg">
+    <meta property="og:image:width" content="200">
+  <meta property="og:image:height" content="200">
+
+
+  
+    <meta property="fb:admins" content="5953837487">
+  
+
+  
+    <meta property="fb:app_id" content="183577541666001">
+  
+
+  
+  <meta property="og:title" content="2810 6th Ave N, Texas City, TX 77590 - 3 Bed, 2 Bath Single-Family Home - MLS #5078614 - 36 Photos | Trulia">
+  <meta property="og:description" content="2810 6th Ave N, Texas City, TX is a 1300 sq ft, 3 bed, 2 bath home listed on Trulia for $119,998 in Texas City, Texas.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Trulia Real Estate Search">
+
+
+  <meta name="theme-color" content="#20c063">
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="//static.trulia-cdn.com/images/icons/apple-touch-icon-144x144.png">
+  
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="//static.trulia-cdn.com/images/icons/apple-touch-icon-72x72.png">
+  
+      <link rel="alternate" href="ios-app://288487321/https/www.trulia.com/p/tx/texas-city/2810-6th-ave-n-texas-city-tx-77590--1126111267">
+      <link rel="alternate" href="android-app://com.trulia.android/https/www.trulia.com/p/tx/texas-city/2810-6th-ave-n-texas-city-tx-77590--1126111267">
+  
+  
+
+  
+                  <link rel="stylesheet" type="text/css" href="//static.trulia-cdn.com/css/578dd5a/css/compiled/pages/pdp/property-web.css" >
+
+            
+
+  
+
+  
+    
+    <script>
+    (function() {
+      if (window.top !== window) {
+        window.top.location = window.location.toString();
+      }
+    })();
+    </script>
+  
+
+  
+  <link rel="preconnect" href="//static.trulia-cdn.com"/>
+  <link rel="preconnect" href="//thumbs.trulia-cdn.com"/>
+  <link rel="preconnect" href="//maps.google.com"/>
+  <link rel="preconnect" href="//assets.adobedtm.com"/>
+  <link rel="preconnect" href="//ajax.googleapis.com"/>
+
+  <link rel="dns-prefetch" href="//static.trulia-cdn.com"/>
+  <link rel="dns-prefetch" href="//thumbs.trulia-cdn.com"/>
+  <link rel="dns-prefetch" href="//maps.google.com"/>
+  <link rel="dns-prefetch" href="//assets.adobedtm.com"/>
+  <link rel="dns-prefetch" href="//ajax.googleapis.com"/>
+
+
+  
+    <link rel="mask-icon" href="//static.trulia-cdn.com/images/icons/safari_mask_icon_20160415.svg" color="#20C063">
+    <meta name="msapplication-TileColor" content="#20c063">
+    <meta name="msapplication-TileImage" content="//static.trulia-cdn.com/images/logos/markerman_white_x144.png">
+  
+      <link rel="canonical" href="https://www.trulia.com/p/tx/texas-city/2810-6th-ave-n-texas-city-tx-77590--1126111267">
+    
+
+  
+
+  
+
+  
+  <script type='text/javascript'>
+    window.loadOmniFromDTM = true;
+  </script>
+
+  
+  
+            <script async src="//assets.adobedtm.com/launch-EN6a2a075351da41849d53019821066484.min.js"></script>
+      
+
+</head>
+<body class="">
+  
+  
+  
+  
+    
+    <div class="headerContainer ">
+      <div class="headerRows positionFixed">
+        <div id="customAppDownloadBanner" class="zIndexPageOverlay"></div>
+        <header class="globalNav oocss " id="globalNavNormal" data-role="global_nav">
+  <div id="navbarContainer"><div class="navbarWrapper navbar__navbarWrapper___3KU4" data-reactroot=""><svg class="floatRight mdHidden lrgHidden overlay-button__menuIcon___11l6" aria-labelledby="navMenuTitle navMenuDesc" viewBox="0 0 27 26"><title id="navMenuTitle">Menu Icon</title><desc id="navMenuDesc">Click to open Mobile Menu</desc><rect x="0.5" y="0.5" width="25" height="25" rx="3" ry="3" stroke-linecap="round" stroke-linejoin="round"></rect><g><line class="accelerate" style="-webkit-transform:translateY(0px) rotate(0deg) translateZ(0);transform:translateY(0px) rotate(0deg) translateZ(0)" id="bottom" x1="20.8" y1="7.7" x2="5.2" y2="7.7" fill="none" stroke-linecap="round"></line><line style="opacity:1" id="mid" x1="20.8" y1="13.2" x2="5.2" y2="13.2" fill="none" stroke-linecap="round"></line><line class="accelerate" style="-webkit-transform:translateY(0px) rotate(0deg) translateZ(0);transform:translateY(0px) rotate(0deg) translateZ(0)" id="top" x1="20.8" y1="18.8" x2="5.2" y2="18.8" fill="none" stroke-linecap="round"></line></g></svg><div class="menuOverlay mdHidden lrgHidden hideVisually"><div class="overlayAll backgroundInverse" style="opacity:0"></div><div class="mobileNavBk backgroundInverse floatRight" style="-webkit-transform:scale(0) translateZ(0);transform:scale(0) translateZ(0)"></div><div class="mobileNav accelerate" style="opacity:0"><div class="centerHorizontal staggerM"><a href="/" class="logo txtC"><svg version="1.1" x="0px" y="0px" viewBox="0 0 924.092 294.029" enable-background="new 0 0 924.092 294.029" aria-labelledby="logoTitleImg" role="img"><title id="logoTitleImg">Trulia Logo</title><g><circle fill="#FFFFFF" cx="700.921" cy="54.323" r="22.6"></circle><path fill="#FFFFFF" d="M257.252,260.428c-32.896,0-49.189-18.798-49.189-50.127v-82.711h-29.762V95.321h29.762V53.967 l39.163-9.713v51.068h41.04v32.268h-41.04v79.265c0,12.531,5.638,17.857,18.169,17.857c8.146,0,14.725-0.312,25.377-1.567v32.896 C279.808,258.86,268.842,260.428,257.252,260.428z"></path><path fill="#FFFFFF" d="M397.145,130.097c-27.57,0-41.981,19.736-41.981,46.054v82.083h-39.475V95.321h33.208l3.447,24.436 c7.52-18.798,26.944-26.63,46.054-26.63c4.073,0,8.146,0.314,12.219,0.941v37.594C406.229,130.724,401.53,130.097,397.145,130.097z "></path><path fill="#FFFFFF" d="M537.864,258.234l-2.82-21.304c-7.832,15.978-26.003,25.377-46.68,25.377 c-34.776,0-56.394-23.497-56.394-58.273V95.321h39.163v99.94c0,19.112,7.52,31.017,28.197,31.017 c9.085,0,15.351-3.447,20.051-8.146c9.399-8.773,11.905-23.497,11.905-36.655V95.321h39.161v162.913H537.864z"></path><path fill="#FFFFFF" d="M640.575,260.113c-26.63,0-44.487-12.846-44.487-43.86V31.722h39.475v177.952 c0,9.399,2.191,15.663,15.663,15.663c3.447,0,4.387-0.312,6.579-0.312v32.894C649.974,259.487,648.407,260.113,640.575,260.113z"></path><path fill="#FFFFFF" d="M681.027,258.234V95.321h39.787v162.913H681.027z"></path><path fill="#FFFFFF" d="M876.275,260.74c-16.919,0-26.318-10.652-27.57-22.871c-7.52,13.16-26.315,24.438-49.501,24.438 c-38.849,0-58.9-24.438-58.9-51.068c0-31.015,24.124-48.874,55.141-51.066l47.933-3.447v-10.025 c0-15.351-5.326-25.691-27.57-25.691c-18.169,0-28.823,8.146-29.762,23.185h-37.908c2.191-36.657,31.329-52.947,67.67-52.947 c27.885,0,51.694,8.773,61.093,33.208c4.073,10.34,4.699,21.93,4.699,32.896v60.465c0,7.52,2.506,10.34,9.085,10.34 c2.508,0,5.014-0.626,5.014-0.626v28.823C889.12,259.175,885.674,260.74,876.275,260.74z M843.378,185.862l-41.355,3.134 c-11.905,0.939-23.497,8.144-23.497,21.304c0,12.531,10.966,20.363,23.183,20.363c24.438,0,41.669-13.158,41.669-37.282V185.862z"></path><g><path fill="#FFFFFF" d="M87.573,31.722c-35.964,0.201-59.18,24.336-59.18,60.831c0,30.212,19.708,56.047,30.941,95.325 c6.431,22.493,9.89,50.025,11.705,70.356h33.068c1.815-20.331,5.274-47.863,11.705-70.356 c11.232-39.278,30.941-65.113,30.941-95.325C146.753,56.058,123.538,31.924,87.573,31.722z M87.763,124.695 c-14.95,0-27.07-12.12-27.07-27.07s12.12-27.07,27.07-27.07c14.951,0,27.07,12.12,27.07,27.07S102.714,124.695,87.763,124.695z"></path></g></g></svg></a></div><div class="overlayForm clearfix"><form class="form man autoCompleteSearchForm search_box__autoCompleteSearchForm___1IfkN"><div class="field man"><span class="fieldItem fieldAppend text"><div class="buttonContainer"><button id="dropdownBtn" class="addOn btn btnDefault floatRight search_box__submitButton___26LNp" type="submit"><i class="iconSearch"></i></button></div><div class="inputField search_box__inputField___2v8Nw"><input type="search" value="Texas City, TX" name="location-autocomplete" placeholder="Search by neighborhood, city, county or zip" autoComplete="off"/></div></span></div></form></div><div><ul class="overlayMenu typeReversed typeEmphasize staggerLi"><li class="txtL things soverlay-Buy-Buy " style="opacity:[object Object]"><a href="/TX/Texas_City/">Buy</a></li><li class="txtL things soverlay-Rent-Rent " style="opacity:[object Object]"><a href="/for_rent/Texas_City,TX/">Rent</a></li><li class="txtL things soverlay-Mortgage-Mortgage " style="opacity:[object Object]"><a href="/mortgages/">Mortgage</a></li><li class="txtL things soverlay-Local Info-Local Info " style="opacity:[object Object]"><a href="/real_estate/Texas_City-Texas/">Local Info</a></li><li class="txtL things" style="opacity:[object Object]"><button>Additional Resources</button></li><li class="txtL things sTrulia Blogs " style="opacity:1;display:none"><a href="/blog/">Trulia Blogs</a></li><li class="txtL things sGo Mobile with Trulia " style="opacity:1;display:none"><a href="/mobile/">Go Mobile with Trulia</a></li><li class="txtL things sAdvice " style="opacity:1;display:none"><a href="/voices/Texas_City---36545/">Advice</a></li><li class="txtL things sAsk a Question " style="opacity:1;display:none"><a href="/ask/">Ask a Question</a></li><li class="txtL things sHelp Center " style="opacity:1;display:none"><a href="/help/">Help Center</a></li><li class="txtL things sundefined " style="opacity:1;display:none"><a href="undefined"></a></li></ul></div></div><div class="signInButtonContainer accelerate" style="opacity:0"><button class="signInButton baz btn btnDefault btnSml">Sign up/Sign In</button></div></div><nav class="navbar  navbar__navbar___3Vtd"><div class="containerFluid navbar__containerFluid___ui6L"><div class="navbar__navbarHeader___2Znm"><a href="/" class="floatLeft navbar__navbarLogo___2-cY"><svg version="1.1" x="0px" y="0px" viewBox="0 0 924.092 294.029" enable-background="new 0 0 924.092 294.029" aria-labelledby="logoTitleImg" role="img"><title id="logoTitleImg">Trulia Logo</title><g><circle fill="#FFFFFF" cx="700.921" cy="54.323" r="22.6"></circle><path fill="#FFFFFF" d="M257.252,260.428c-32.896,0-49.189-18.798-49.189-50.127v-82.711h-29.762V95.321h29.762V53.967 l39.163-9.713v51.068h41.04v32.268h-41.04v79.265c0,12.531,5.638,17.857,18.169,17.857c8.146,0,14.725-0.312,25.377-1.567v32.896 C279.808,258.86,268.842,260.428,257.252,260.428z"></path><path fill="#FFFFFF" d="M397.145,130.097c-27.57,0-41.981,19.736-41.981,46.054v82.083h-39.475V95.321h33.208l3.447,24.436 c7.52-18.798,26.944-26.63,46.054-26.63c4.073,0,8.146,0.314,12.219,0.941v37.594C406.229,130.724,401.53,130.097,397.145,130.097z "></path><path fill="#FFFFFF" d="M537.864,258.234l-2.82-21.304c-7.832,15.978-26.003,25.377-46.68,25.377 c-34.776,0-56.394-23.497-56.394-58.273V95.321h39.163v99.94c0,19.112,7.52,31.017,28.197,31.017 c9.085,0,15.351-3.447,20.051-8.146c9.399-8.773,11.905-23.497,11.905-36.655V95.321h39.161v162.913H537.864z"></path><path fill="#FFFFFF" d="M640.575,260.113c-26.63,0-44.487-12.846-44.487-43.86V31.722h39.475v177.952 c0,9.399,2.191,15.663,15.663,15.663c3.447,0,4.387-0.312,6.579-0.312v32.894C649.974,259.487,648.407,260.113,640.575,260.113z"></path><path fill="#FFFFFF" d="M681.027,258.234V95.321h39.787v162.913H681.027z"></path><path fill="#FFFFFF" d="M876.275,260.74c-16.919,0-26.318-10.652-27.57-22.871c-7.52,13.16-26.315,24.438-49.501,24.438 c-38.849,0-58.9-24.438-58.9-51.068c0-31.015,24.124-48.874,55.141-51.066l47.933-3.447v-10.025 c0-15.351-5.326-25.691-27.57-25.691c-18.169,0-28.823,8.146-29.762,23.185h-37.908c2.191-36.657,31.329-52.947,67.67-52.947 c27.885,0,51.694,8.773,61.093,33.208c4.073,10.34,4.699,21.93,4.699,32.896v60.465c0,7.52,2.506,10.34,9.085,10.34 c2.508,0,5.014-0.626,5.014-0.626v28.823C889.12,259.175,885.674,260.74,876.275,260.74z M843.378,185.862l-41.355,3.134 c-11.905,0.939-23.497,8.144-23.497,21.304c0,12.531,10.966,20.363,23.183,20.363c24.438,0,41.669-13.158,41.669-37.282V185.862z"></path><g><path fill="#FFFFFF" d="M87.573,31.722c-35.964,0.201-59.18,24.336-59.18,60.831c0,30.212,19.708,56.047,30.941,95.325 c6.431,22.493,9.89,50.025,11.705,70.356h33.068c1.815-20.331,5.274-47.863,11.705-70.356 c11.232-39.278,30.941-65.113,30.941-95.325C146.753,56.058,123.538,31.924,87.573,31.722z M87.763,124.695 c-14.95,0-27.07-12.12-27.07-27.07s12.12-27.07,27.07-27.07c14.951,0,27.07,12.12,27.07,27.07S102.714,124.695,87.763,124.695z"></path></g></g></svg></a></div><div class="clearfix"><div class="smlHidden xsHidden xxsHidden miniHidden navbarMenu menu__navbarMenu___19zs"><section class="menu__dropdown___3YPv"><header><a class="" href="/TX/Texas_City/">Buy</a></header><ul class="txtL menu__dropdownMenu___3-lz"><li><header>Texas City</header><ul><li><a href="/TX/Texas_City/" class="menuItem menu__dropdownToggle___1pIe">Homes for Sale<!-- --> <span></span></a></li><li><a href="/for_sale/Texas_City,TX/p_oh/" class="menuItem menu__dropdownToggle___1pIe">Open Houses<!-- --> <span></span></a></li><li><a href="/for_sale/Texas_City,TX/new_homes_lt/" class="menuItem menu__dropdownToggle___1pIe">New Homes<!-- --> <span></span></a></li><li><a href="/sold/Texas_City,TX/" class="menuItem menu__dropdownToggle___1pIe">Recently Sold<!-- --> <span></span></a></li><li class="menu__divider___2Wwn"></li></ul></li><li><a href="/new-for-sale-properties/TX/" class="menuItem menu__dropdownToggle___1pIe">See Newest Listings<!-- --> <span></span></a></li></ul></section><section class="menu__dropdown___3YPv"><header><a class="" href="/for_rent/Texas_City,TX/">Rent</a></header><ul class="txtL menu__dropdownMenu___3-lz"><li><header>Texas City</header><ul><li><a href="/for_rent/Texas_City,TX/" class="menuItem menu__dropdownToggle___1pIe">All Rentals<!-- --> <span></span></a></li><li><a href="/for_rent/Texas_City,TX/APARTMENT,APARTMENT_COMMUNITY,APARTMENT%7CCONDO%7CTOWNHOUSE,CONDO,COOP,LOFT,TIC_type/" class="menuItem menu__dropdownToggle___1pIe">Apartments for Rent<!-- --> <span></span></a></li><li><a href="/for_rent/Texas_City,TX/SINGLE-FAMILY_HOME_type/" class="menuItem menu__dropdownToggle___1pIe">Houses for Rent<!-- --> <span></span></a></li><li><a href="/for_rent/Texas_City,TX/ROOM_FOR_RENT_type/" class="menuItem menu__dropdownToggle___1pIe">Rooms for Rent<!-- --> <span></span></a></li><li class="menu__divider___2Wwn"></li></ul></li><li><a href="/new-for-rent-properties/TX/" class="menuItem menu__dropdownToggle___1pIe">See Newest Listings<!-- --> <span></span></a></li><li class="menu__divider___2Wwn"></li><li><a href="/post-rental/" class="menuItem menu__dropdownToggle___1pIe">Post A Rental Listing<!-- --> <span></span></a></li></ul></section><section class="menu__dropdown___3YPv"><header><a class="" href="/mortgages/">Mortgage</a></header><ul class="txtL menu__dropdownMenu___3-lz"><li><header>Texas City</header><ul><li><a href="/mortgages/" class="menuItem menu__dropdownToggle___1pIe">Mortgage Overview<!-- --> <span></span></a></li><li><a href="/mortgages/pre-approval?omni_src=mortgage%7Cglobal_nav" class="menuItem menu__dropdownToggle___1pIe">Get Pre-Qualified<!-- --> <span></span></a></li><li><a href="/mortgage-rates/Texas_City,TX/" class="menuItem menu__dropdownToggle___1pIe">Mortgage Rates<!-- --> <span></span></a></li><li><a href="/refinance-rates/Texas_City,TX/" class="menuItem menu__dropdownToggle___1pIe">Refinance Rates<!-- --> <span></span></a></li></ul></li><li class="menu__divider___2Wwn"></li><li><a href="/mortgage-payment-calculator/" class="menuItem menu__dropdownToggle___1pIe">Mortgage Calculator<!-- --> <span></span></a></li><li><a href="/house-affordability-calculator/" class="menuItem menu__dropdownToggle___1pIe">Affordability Calculator<!-- --> <span></span></a></li><li><a href="/rent_vs_buy/" class="menuItem menu__dropdownToggle___1pIe">Rent vs Buy Calculator<!-- --> <span></span></a></li><li><a href="/home-loan-refinance-calculator/" class="menuItem menu__dropdownToggle___1pIe">Refinance Calculator<!-- --> <span></span></a></li></ul></section><section class="menu__dropdown___3YPv"><header><a class="" href="/real_estate/Texas_City-Texas/">Local Info</a></header><ul class="txtL menu__dropdownMenu___3-lz"><li><header>Texas City</header><ul><li><a href="/real_estate/Texas_City-Texas/" class="menuItem menu__dropdownToggle___1pIe">Real Estate Overview<!-- --> <span></span></a></li><li><a href="/real_estate/Texas_City-Texas/market-trends/" class="menuItem menu__dropdownToggle___1pIe">Market Trends<!-- --> <span></span></a></li><li><a href="/real_estate/Texas_City-Texas/schools/" class="menuItem menu__dropdownToggle___1pIe">Schools<!-- --> <span></span></a></li><li><a href="/real_estate/Texas_City-Texas/crime/" class="menuItem menu__dropdownToggle___1pIe">Crime<!-- --> <span></span></a></li></ul></li><li class="menu__divider___2Wwn"></li><li><a href="/local-info/cities" class="menuItem menu__dropdownToggle___1pIe">All Trulia Neighborhood Guides<!-- --> <span></span></a></li><li><a href="/local/" class="menuItem menu__dropdownToggle___1pIe">Maps by Trulia<!-- --> <span></span></a></li></ul></section><section class="menu__dropdown___3YPv"><header><a class="">Additional Resources</a></header><ul class="txtL menu__dropdownMenu___3-lz"><li><a href="/blog/" class="menuItem menu__dropdownToggle___1pIe">Trulia Blogs<!-- --> <span></span></a></li><li><a href="/mobile/" class="menuItem menu__dropdownToggle___1pIe">Go Mobile with Trulia<!-- --> <span></span></a></li><li class="menu__dropdown___3YPv"><a href="/voices/Texas_City---36545/" class="menuItem menu__dropdownToggle___1pIe">Advice<!-- --> <span class="iconRightOpen floatRight"></span></a><ul class="txtL menu__dropdownMenu___3-lz"><li><a href="/voices/Texas_City---36545/" class="menuItem menu__dropdownToggle___1pIe">Texas City Q&amp;A<!-- --> <span></span></a></li><li><a href="/guides/" class="menuItem menu__dropdownToggle___1pIe">Trulia Guides<!-- --> <span></span></a></li></ul></li><li><a href="/ask/" class="menuItem menu__dropdownToggle___1pIe">Ask a Question<!-- --> <span></span></a></li><li><a href="/help/" class="menuItem menu__dropdownToggle___1pIe">Help Center<!-- --> <span></span></a></li><li><header>For Professionals</header><ul><li><a href="/real-estate-leads/" rel="nofollow" class="menuItem menu__dropdownToggle___1pIe">Get Leads by ZIP<!-- --> <span></span></a></li><li><a href="/advertising/mortgage-leads/" class="menuItem menu__dropdownToggle___1pIe">Get Mortgage Leads<!-- --> <span></span></a></li><li><a href="/submit_listings/" rel="nofollow" class="menuItem menu__dropdownToggle___1pIe">Submit Listings<!-- --> <span></span></a></li></ul></li></ul></section></div><ul class="smlHidden xsHidden xxsHidden miniHidden menu-personalized__navbarMenu___1ybM menu-personalized__menuPersonalized___OCr0"><li><button class=" ban">Saved Homes</button></li><li><button class=" ban">Saved Searches</button></li><li><button class="baz btn btnSml btnDefault signinButton menu-personalized__signinButton___1CxD">Sign In</button></li></ul><span></span></div></div></nav></div></div>
+  <div class="backgroundBasic">
+  
+</div></header>
+      </div>
+    </div>
+    
+  
+  
+
+  
+      <div id="modalRoot" class="zIndexPageOverlay"></div>
+
+      <div class="backgroundLowlight positionRelative" id="subNavContainer">
+  <div class="pts lrgHidden mdHidden"></div>
+    <div class="cols24 centerHorizontal pvxs" id="subNavContent">
+      <div class="miniCol10 smlCol16 lrgCol19 pan">
+        <div class="typeLowlight h7 man typeTruncate">
+                                    <span class="typeEmphasize prm">
+                <a href="/for_sale/Texas_City,TX/" class="linkLowlight" onClick="trulia.analytics.saveInteractedWith('top bar:back to search')">
+                  <span class="breadCrumbArrow mrs"><svg id="iconLeftOpen" fill="currentColor" width="6px" height="10px" viewBox="0 0 6 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g fill-rule="evenodd">
+    <g transform="translate(-4.000000, -1.000000)">
+      <g transform="translate(3.000000, 0.612500)">
+        <path d="M3.503,10 C3.37,10 3.243,9.947 3.149,9.853 L-1.853,4.853 C-2.049,4.658 -2.049,4.342 -1.853,4.147 C-1.658,3.951 -1.342,3.951 -1.146,4.147 L3.503,8.793 L8.147,4.147 C8.342,3.951 8.658,3.951 8.854,4.147 C9.049,4.342 9.049,4.658 8.854,4.853 L3.857,9.853 C3.763,9.947 3.636,10 3.503,10" transform="translate(4.000000, 7.000000) rotate(-270.000000) translate(-4.000000, -7.000000) "></path>
+      </g>
+    </g>
+  </g>
+</svg></span>
+                  Back to Search
+                </a>
+              </span>
+            
+            <span class="miniHidden">(</span>
+                          <span class="miniHidden">For Sale
+                <span class="breadCrumbArrow mhs"><svg id="iconRightOpen" fill="currentColor" width="6px" height="10px" viewBox="0 0 6 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g fill-rule="evenodd">
+    <g transform="translate(-5.000000, -2.000000)">
+      <g transform="translate(4.000000, 1.000000)">
+        <path d="M3.503,9 C3.37,9 3.243,8.947 3.149,8.853 L-1.853,3.853 C-2.049,3.658 -2.049,3.342 -1.853,3.147 C-1.658,2.951 -1.342,2.951 -1.146,3.147 L3.503,7.793 L8.147,3.147 C8.342,2.951 8.658,2.951 8.854,3.147 C9.049,3.342 9.049,3.658 8.854,3.853 L3.857,8.853 C3.763,8.947 3.636,9 3.503,9" transform="translate(4.000000, 6.000000) rotate(-90.000000) translate(-4.000000, -6.000000) "></path>
+      </g>
+    </g>
+  </g>
+</svg></span>
+              </span>
+            
+                          <span class="miniHidden"><a href="/sitemap/Texas-real-estate/" class="linkLowlight" onClick="trulia.analytics.saveInteractedWith('top bar:breadcrumb state link')">TX</a>
+                <span class="breadCrumbArrow mhs"><svg id="iconRightOpen" fill="currentColor" width="6px" height="10px" viewBox="0 0 6 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g fill-rule="evenodd">
+    <g transform="translate(-5.000000, -2.000000)">
+      <g transform="translate(4.000000, 1.000000)">
+        <path d="M3.503,9 C3.37,9 3.243,8.947 3.149,8.853 L-1.853,3.853 C-2.049,3.658 -2.049,3.342 -1.853,3.147 C-1.658,2.951 -1.342,2.951 -1.146,3.147 L3.503,7.793 L8.147,3.147 C8.342,2.951 8.658,2.951 8.854,3.147 C9.049,3.342 9.049,3.658 8.854,3.853 L3.857,8.853 C3.763,8.947 3.636,9 3.503,9" transform="translate(4.000000, 6.000000) rotate(-90.000000) translate(-4.000000, -6.000000) "></path>
+      </g>
+    </g>
+  </g>
+</svg></span>
+              </span>
+            
+                          <span class="miniHidden"><a href="/TX/Texas_City/" class="linkLowlight" onClick="trulia.analytics.saveInteractedWith('top bar:breadcrumb city link')">Texas City</a>
+                <span class="breadCrumbArrow mhs"><svg id="iconRightOpen" fill="currentColor" width="6px" height="10px" viewBox="0 0 6 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g fill-rule="evenodd">
+    <g transform="translate(-5.000000, -2.000000)">
+      <g transform="translate(4.000000, 1.000000)">
+        <path d="M3.503,9 C3.37,9 3.243,8.947 3.149,8.853 L-1.853,3.853 C-2.049,3.658 -2.049,3.342 -1.853,3.147 C-1.658,2.951 -1.342,2.951 -1.146,3.147 L3.503,7.793 L8.147,3.147 C8.342,2.951 8.658,2.951 8.854,3.147 C9.049,3.342 9.049,3.658 8.854,3.853 L3.857,8.853 C3.763,8.947 3.636,9 3.503,9" transform="translate(4.000000, 6.000000) rotate(-90.000000) translate(-4.000000, -6.000000) "></path>
+      </g>
+    </g>
+  </g>
+</svg></span>
+              </span>
+                                      <span class="miniHidden"><a href="/TX/Texas_City/77590/" class="linkLowlight" onClick="trulia.analytics.saveInteractedWith('top bar:breadcrumb zip link')">77590</a>
+                <span class="breadCrumbArrow mhs"><svg id="iconRightOpen" fill="currentColor" width="6px" height="10px" viewBox="0 0 6 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g fill-rule="evenodd">
+    <g transform="translate(-5.000000, -2.000000)">
+      <g transform="translate(4.000000, 1.000000)">
+        <path d="M3.503,9 C3.37,9 3.243,8.947 3.149,8.853 L-1.853,3.853 C-2.049,3.658 -2.049,3.342 -1.853,3.147 C-1.658,2.951 -1.342,2.951 -1.146,3.147 L3.503,7.793 L8.147,3.147 C8.342,2.951 8.658,2.951 8.854,3.147 C9.049,3.342 9.049,3.658 8.854,3.853 L3.857,8.853 C3.763,8.947 3.636,9 3.503,9" transform="translate(4.000000, 6.000000) rotate(-90.000000) translate(-4.000000, -6.000000) "></path>
+      </g>
+    </g>
+  </g>
+</svg></span>
+              </span>
+                                      <span class="miniHidden">2810 6th Ave N</span>
+                        <span class="miniHidden">)</span>
+                  </div>
+      </div>
+      <div class="miniCol14 smlCol8 lrgCol5 pan">
+        <div class="floatRight pvxs">
+          <span data-role="coShoppingContainer"></span>
+        </div>
+      </div>
+    </div>
+  <div class="pts lrgHidden mdHidden"></div>
+</div>
+        <script type="application/ld+json">
+{
+   "@context":"http://schema.org",
+   "@type":"BreadcrumbList",
+   "itemListElement":[
+             {
+         "@type":"ListItem",
+         "position":1,
+         "item":{
+            "name":"For Sale"
+                     }
+       },              {
+         "@type":"ListItem",
+         "position":2,
+         "item":{
+            "name":"TX"
+            ,"@id":"/sitemap/Texas-real-estate/"         }
+       },              {
+         "@type":"ListItem",
+         "position":3,
+         "item":{
+            "name":"Texas City"
+            ,"@id":"/TX/Texas_City/"         }
+       },              {
+         "@type":"ListItem",
+         "position":4,
+         "item":{
+            "name":"77590"
+            ,"@id":"/TX/Texas_City/77590/"         }
+       },              {
+         "@type":"ListItem",
+         "position":5,
+         "item":{
+            "name":"2810 6th Ave N"
+                     }
+       }         ]
+}
+</script>    <div id="stickyPropertySummary" class="positionFixed zIndexNavigation backgroundBasic cols24 summaryContainer smlHidden xsHidden xxsHidden miniHidden">
+  <div class="centerHorizontal cols24 summaryContent smlHidden xsHidden xxsHidden miniHidden">
+    <div class="row man positionRelative phlMdVisible pvm phn">
+      <div class="xsCol24 smlCol24 mdCol8 lrgCol8 pln prm">
+                  <div class="h3 pan man defaultLineHeight noWrap overflowEllipsis">
+            2810 6th Ave N
+          </div>
+                <div class="mts typeLowlight miniHidden xxsHidden">
+          Texas City, TX 77590
+                  </div>
+      </div>
+      <div class="xsCol24 smlCol24 mdCol8 lrgCol8 pln prm">
+        <div class="man">
+            <div class="mvn">
+    <span class="h3">
+              $119,998
+      
+          </span>
+      </div>
+
+
+
+            <div class="mortgageSummary" style="">
+          <span data-auto-test-id="monthly-amount-header-text" class="paymentModule">
+        Est. Mortgage $652/mo
+      </span>      <span class="preQualifiedLink"></span>
+    
+      </div>
+        </div>
+      </div>
+      <div class="mdVisible lrgVisible mdCol8 lrgCol8 prm">
+        <div id="stickyLeadFormContainer"></div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div id="propertySummary" class="positionRelative zIndexExpandingAd backgroundBasic cols24">
+  <div class="centerHorizontal cols24 summaryContent">
+    <div class="row man positionRelative pamXxsVisible pvlSmlVisible phlMdVisible pvm phn">
+      <div class="xsCol24 smlCol24 mdCol16 lrgCol16 phn clearfix">
+                  <div>
+  <h1 class="h3 defaultLineHeight" style="display: inline;">
+          <div class="pan man defaultLineHeight" data-role="address">
+        2810 6th Ave N
+      </div>
+        <span class="h6 typeWeightNormal pts typeLowlight paXxsHidden maXxsHidden" data-role="cityState">
+      Texas City, TX 77590
+    </span>
+  </h1>
+
+  </div>
+          <ul class="listInline Bulleted man pts ptXxsHidden pbsXxsVisible">
+      <li>3 beds</li>
+  
+      <li class="type">2 baths</li>
+  
+      <li>1,300 sqft</li>
+  
+  <li class="miniHidden xxsHidden">6695 sqft lot size</li>
+
+  <li class="miniHidden xxsHidden">Single-Family Home</li>
+</ul>
+              </div>
+      <div class="xsCol24 smlCol24 mdCol8 lrgCol8 pan ptxsXxsVisible ptlSmlVisible">
+        <div class="man">
+                      <div data-testid="property-status">
+              <div class="typeLowlight typeEmphasize mvn h6">
+  <span class="typeCaps">For Sale</span>
+      </div>
+            </div>
+                      <div class="mvn">
+    <span class="h3" data-role="price">
+              $119,998
+      
+          </span>
+      </div>
+
+
+
+            <div class="mortgageSummary" style="">
+          <span data-auto-test-id="monthly-amount-header-text" class="paymentModule">
+        Est. Mortgage $652/mo
+      </span>      <span class="preQualifiedLink"></span>
+    
+      </div>
+        </div>
+      </div>
+      <div id="providerLogo" class="man ptm xxsHidden miniHidden"></div>
+    </div>
+  </div>
+</div>
+
+  <script type="application/ld+json">
+{
+   "@context":"http://schema.org",
+   "@type":"Product",
+   "name": "2810 6th Ave N Texas City, TX 77590",
+   "offers": {
+         "@type": "Offer",
+         "price": "119998",
+         "priceCurrency": "USD"
+   }
+}
+</script>  
+  <div id="topPanel" class="man row overlayContainer backgroundLowlight ">
+    <div id="topContainer" class="centerHorizontal cols24">
+      <div id="mainContainer" class="miniCol24 xxsCol24 xsCol24 smlCol24 pan mainContainerTransition">
+          
+<div id="mediaItem" class="overlayContainer hoverOverlay clickable">
+  <ul class="tagList zIndexPopup overlayHighlight tags man h6 typeEmphasize lvxs listInlineBulleted overlayTop overlayLeft">
+  <li>New</li></ul>
+
+      <img
+      class="mediaHeroImage cols24 centerVertical"
+      srcset="
+              //thumbs.trulia-cdn.com/pictures/thumbs/zillowstatic/ISi750fxpht4og0000000000.jpg 70w,
+              //thumbs.trulia-cdn.com/pictures/thumbs_big/zillowstatic/ISi750fxpht4og0000000000.jpg 140w,
+              //thumbs.trulia-cdn.com/pictures/thumbs_3/zillowstatic/ISi750fxpht4og0000000000.jpg 320w,
+              //thumbs.trulia-cdn.com/pictures/thumbs_4/zillowstatic/ISi750fxpht4og0000000000.jpg 640w,
+              //thumbs.trulia-cdn.com/pictures/thumbs_5/zillowstatic/ISi750fxpht4og0000000000.jpg 1024w,
+              //thumbs.trulia-cdn.com/pictures/thumbs_6/zillowstatic/ISi750fxpht4og0000000000.jpg 2048w,
+      "
+      src="//thumbs.trulia-cdn.com/pictures/thumbs_6/zillowstatic/ISi750fxpht4og0000000000.jpg"
+      alt="2810 6th Ave N"
+    >
+
+    
+    <div class="mediaItemCenteredContainer">
+      <div class="positionAbsolute overlayRight overlayBottom">
+        <ul class="listInline mbm">
+                      <li>
+              <div id="mediaCount" class="pas backgroundInverse boxHighlight baz typeReversed">
+                <i class="iconPicture"></i>
+            <span class="noWrap">
+              36
+            </span>
+              </div>
+            </li>
+          
+                  </ul>
+      </div>
+    </div>
+  </div>
+      </div>
+      <div id="topThirdPlacementLeadFormContainer" class="miniHidden xxsHidden xsHidden smlHidden pan plm">
+  <div class="backgroundBasic bhs bbs" id="topPanelLeadFormContainer">
+    <div class="pam form-wrapper">
+      <div class="phm mvn form-item">
+        <div class="animated-background">
+          <div class="background-masker loader-row1"></div>
+          <div class="background-masker loader-row2"></div>
+          <div class="background-masker loader-row3"></div>
+          <div class="background-masker loader-row4"></div>
+          <div class="background-masker loader-row5"></div>
+          <div class="background-masker loader-row5-right"></div>
+          <div class="background-masker loader-row6"></div>
+          <div class="background-masker loader-row7"></div>
+          <div class="background-masker loader-row7-right"></div>
+          <div class="background-masker loader-row8"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+          <div id="cardsContainer" class="centerHorizontal cols24">
+        <div id="lilFeatureHighlightContainer"></div>
+<div id="cardContainer" class="positionRelative pvm mtxs mbs ">
+  <ul id="cardContent" class="listInline man pan">
+                  <li id="mapViewCard" class="cardItem pan backgroundBasic">
+  <div class="clickable">
+    <div class="cardImage" style="background-image: url(//static.trulia-cdn.com/images/property-web/cards/map-view.svg)"></div>
+    <div class="cardDescription pam">
+      <div class="cardDescriptionVisibleWrap">
+        <p class="typeEmphasize activeLink mtn ptn">Map View</p>
+                  <p class="h7 typeLowlight mvn miniHidden">See the local terrain and how close this home is to parks and main streets.</p>
+              </div>
+      <p class="h7 typeHighlight typeEmphasize">View More</p>
+    </div>
+  </div>
+</li>
+                        <li id="streetViewCard" class="cardItem pan backgroundBasic">
+  <div class="clickable">
+    <div class="cardImage" style="background-image: url(//static.trulia-cdn.com/images/property-web/cards/street-view.jpg)"></div>
+    <div class="cardDescription pam">
+      <div class="cardDescriptionVisibleWrap">
+        <p class="typeEmphasize activeLink mtn ptn">Street View</p>
+                  <p class="h7 typeLowlight mvn miniHidden">Take a virtual walk around the neighborhood.</p>
+              </div>
+      <p class="h7 typeHighlight typeEmphasize">View More</p>
+    </div>
+  </div>
+</li>
+                        <li id="schoolsCard" class="cardItem pan backgroundBasic">
+  <div class="clickable">
+    <div class="cardImage" style="background-image: url(//static.trulia-cdn.com/images/property-web/cards/schools.svg)"></div>
+    <div class="cardDescription pam">
+      <div class="cardDescriptionVisibleWrap">
+        <p class="typeEmphasize activeLink mtn ptn">Schools</p>
+                  <p class="h7 typeLowlight mvn miniHidden">1 Elementary School</p>
+                  <p class="h7 typeLowlight mvn miniHidden">2 Middle Schools</p>
+                  <p class="h7 typeLowlight mvn miniHidden">1 High School</p>
+              </div>
+      <p class="h7 typeHighlight typeEmphasize">View More</p>
+    </div>
+  </div>
+</li>
+                        <li id="crimeCard" class="cardItem pan backgroundBasic">
+  <div class="clickable">
+    <div class="cardImage" style="background-image: url(//static.trulia-cdn.com/images/property-web/cards/crime-lowest-v3.svg)"></div>
+    <div class="cardDescription pam">
+      <div class="cardDescriptionVisibleWrap">
+        <p class="typeEmphasize activeLink mtn ptn">Crime</p>
+          <p class="h7 typeLowlight mvn miniHidden"><span class="typeEmphasize">Lowest</span> crime relative to the rest of Galveston county.</p>
+      </div>
+      <p class="h7 typeHighlight typeEmphasize">View More</p>
+    </div>
+  </div>
+</li>
+                        <li id="commuteCard" class="cardItem pan backgroundBasic">
+  <div class="clickable">
+    <div class="cardImage" style="background-image: url(//static.trulia-cdn.com/images/property-web/cards/commute.svg)"></div>
+    <div class="cardDescription pam">
+      <div class="cardDescriptionVisibleWrap">
+        <p class="typeEmphasize activeLink mtn ptn">Commute</p>
+                  <p class="h7 typeLowlight mvn miniHidden">97% of residents commute by car.</p>
+              </div>
+      <p class="h7 typeHighlight typeEmphasize">View More</p>
+    </div>
+  </div>
+</li>
+                        <li id="amenitiesCard" class="cardItem pan backgroundBasic">
+  <div class="clickable">
+    <div class="cardImage" style="background-image: url(//static.trulia-cdn.com/images/property-web/cards/amenities.svg)"></div>
+    <div class="cardDescription pam">
+      <div class="cardDescriptionVisibleWrap">
+        <p class="typeEmphasize activeLink mtn ptn">Shop &amp; Eat</p>
+                  <p class="h7 typeLowlight mvn miniHidden">40 Restaurants</p>
+                  <p class="h7 typeLowlight mvn miniHidden">5 Grocery stores</p>
+                  <p class="h7 typeLowlight mvn miniHidden">2 Nightlife</p>
+              </div>
+      <p class="h7 typeHighlight typeEmphasize">View More</p>
+    </div>
+  </div>
+</li>
+                        <li id="demographicsCard" class="cardItem pan backgroundBasic">
+  <div class="clickable">
+    <div class="cardImage" style="background-image: url(//static.trulia-cdn.com/images/property-web/cards/demographics.svg)"></div>
+    <div class="cardDescription pam">
+      <div class="cardDescriptionVisibleWrap">
+        <p class="typeEmphasize activeLink mtn ptn">Demographics</p>
+                  <p class="h7 typeLowlight mvn miniHidden">Get a feel for the community.</p>
+              </div>
+      <p class="h7 typeHighlight typeEmphasize">View More</p>
+    </div>
+  </div>
+</li>
+            </ul>
+  <div id="cardButtonContainer">
+    <button id="cardLeftButton" class="cardButton plxs">
+      <img src="//static.trulia-cdn.com/images/webs-images/arrow-left-large.svg">
+    </button>
+    <button id="cardRightButton" class="cardButton prxs">
+      <img src="//static.trulia-cdn.com/images/webs-images/arrow-right-large.svg">
+    </button>
+  </div>
+</div>
+      </div>
+      </div>
+
+  <div class="maxWidth containerFluid phn phlMdVisible">
+
+    
+    
+    
+          <div class="row mtl mhn" data-auto-test-id="home-detail">
+        <div class="miniCol24 xsCol24 smlCol24 mdCol16 lrgCol16 mhn phn">
+          <h3 class="h3 mtn">Home Details</h3>
+
+<div class="bbs mbl homeDetailsHeading">
+  <span class="h5 prm backgroundBasic">Overview</span>
+</div>
+
+<div class="row mbm" data-auto-test-id="home-details-overview">
+    <div class="xsColOffset4 smlColOffset4 mdColOffset4 lrgColOffset4 miniCol12 xsCol10 smlCol10  mdCol10 lrgCol10">
+    <ul>
+              <li> Single-Family Home</li>
+      
+              <li> 3 Beds</li>
+      
+              <li> 2 Baths</li>
+      
+              <li> Built in 1965</li>
+      
+              <li> 1 day on Trulia</li>
+          </ul>
+  </div>
+  <div class="miniCol12 xsCol10 smlCol10  mdCol10 lrgCol10">
+    <ul>
+              <li> 6695 sqft lot size</li>
+      
+              <li> 1,300 sqft</li>
+      
+              <li> $92/sqft</li>
+      
+      
+          </ul>
+    </div>
+</div>
+<div class="bbs mbl homeDetailsHeading">
+  <span class="h5 prm backgroundBasic">Description</span>
+</div>
+<div id="descriptionContainer" class="mbl pbm row">
+      <div class="xsColOffset4 xxsCol24 xsCol20">
+      <p id="propertyDescription">
+        
+        Well maintained 3 bedroom, 1.5 bath Texas City home in nice neighborhood. Granite counters in kitchen with all kitchen appliances, tile throughout. Large fenced back yard and 2 car garage. Open living, dining, kitchen concept. Located close to shopping, schools, parks and Nessler Center. A must see!!
+              </p>
+    </div>
+    <div>
+    <span id="toggleDescription" class="iconDownOpen clickable floatRight typeHighlight hideFully pvs pvmXxsVisible"></span>
+  </div>
+</div>
+
+
+  <div class="bbs mbl homeDetailsHeading">
+  <span class="h5 prm backgroundBasic">Features</span>
+</div>
+
+<div data-role="contentWithToggle">
+<div class="row" data-auto-test-id="home-details-features">
+  <div class="xsCol4 smlCol4 mdCol4 lrgCol4"></div>
+      <div class="miniCol24 xsCol10 smlCol10  mdCol10 lrgCol10 mbl">
+      <div class="mbm">
+         <span class="typeEmphasize">LISTING INFORMATION</span>
+              </div>
+      <ul class="man">
+                  <li>3 Bedrooms</li>
+        
+                  <li>2 Bathrooms</li>
+        
+        <li>Single-Family Home</li>
+
+                  <li>1,300 Square Feet</li>
+        
+                  <li>Lot Size: 6695 sqft</li>
+              </ul>
+      <ul data-role="toggledContent" class="hideFully man">
+                  <li>Deck</li>
+                  <li>Lawn</li>
+                  <li>Patio</li>
+                  <li>Refrigerator</li>
+        
+                  <li>Heating Fuel: Gas</li>
+        
+        
+        
+                  <li>Cooling System: Central</li>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+                  <li>MLS/Source ID: 5078614</li>
+        
+      </ul>
+      <div id="telcoflag1" class="adPlaceHolder"></div>
+          </div>
+  
+      <div class="miniCol24 xsCol10 smlCol10  mdCol10 lrgCol10 mbl maXxsHidden">
+      <div class="mbm">
+        <span class="typeEmphasize">PUBLIC RECORDS</span>
+              </div>
+      <ul class="man">
+        
+                  <li>1.5 Bathrooms</li>
+        
+        <li>Single-Family Home</li>
+
+                  <li>1,300 Square Feet</li>
+        
+                  <li>Lot Size: 6,665 sqft</li>
+        
+      </ul>
+
+      <ul data-role="toggledContent" class="hideFully man">
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+              </ul>
+    </div>
+  </div>
+  <div class="row mhn">
+    <div class="txtR typeHighlight">
+      <span class="iconDownOpen clickable pvs pvmXxsVisible" data-role="toggleArrow" data-action="toggleAll"
+            data-has-toggle-text="true"></span>
+    </div>
+  </div>
+</div>
+
+
+
+
+        </div>
+      </div>
+    
+    
+    
+    <div class="row mvl" id="similarHomesContainer">
+          </div>
+
+    <div class="row mvl" id="newListingsContainer"></div>
+
+
+    <div class="row" data-auto-test-id="ads">
+      <div class="miniCol24 xxsCol24 mdCol16">
+        <!-- ads placeholder -->
+        <div id="property1" class="pvm ptXxsHidden adPlaceHolder"></div>
+      </div>
+    </div>
+
+    <div id="accordionModuleContainer"></div>
+
+          <div class="row mhn pbxl pvXxsHidden" data-auto-test-id="price-trend">
+        <div>
+  <hr class="responsiveDivider">
+  <div id="togglePriceTrendBar" class="row ">
+    <div class="mvm ptsXxsVisible xsCol18 miniCol18">
+      <span class="h3">Price Trends</span>
+    </div>
+    <div id="togglePriceTrend" class="iconDownOpen clickable txtR typeHighlight mts pam xxsCol6 miniCol6 xsHidden smlHidden mdHidden lrgHidden"></div>
+  </div>
+</div>
+<div id="priceTrendsContainer">
+  <h5 class="mtn mbl">Real Estate Trends<span data-role="realEstateTrendsTooltip"
+                                            data-informationModalTooltip-title="Real Estate Trends Information"
+                                            data-informationModalTooltip-definition="Average Listing Price: The average price of new and resale homes listed on Trulia based on daily averages for the most recent week. Average listing prices are updated on a weekly basis.
+    Median Sales Price: The median price of residential sales for the most recent 90-day period for which sales are available from public deed records. The median price is the price at which 50% of the homes sold for more than the median price and 50% of the homes sold for less than the median price. Median
+    sale prices are updated on a weekly basis as new sales information becomes available." class="h5 iconInfo mlm typeLowlight" />
+  </h5>
+  <div>
+    <div class="bbs">
+              <div class="row pvm bts">
+  <div class="miniCol24 xsCol16 smlCol13 mdCol10 lrgCol9">
+    Average Listing Price for 77590
+  </div>
+  <div class="miniCol24 xsCol8 smlCol4 mdCol4 lrgCol4 pvmXxsVisible">
+    $149,916
+  </div>
+  <div class="miniCo24 xsCol16 smlCol7 mdCol10 lrgCol11 ptmXsVisible">
+                            <span class="typeGoodIndicator">25%</span> above listing price
+                    </div>
+</div>          </div>
+          <div class="ptm txtR">
+        <a href="/real_estate/77590-Texas_City/market-trends/">View more Sales Trends in 77590</a>
+      </div>
+      </div>
+  <div id="comparablesEstimates" class="positionRelative mbm">
+  <h5 class="mvl hideFully" data-role="comparablesEstimatesHeader">Comparables and Estimates</h5>
+  <div id="map1" className="adPlaceHolder"></div>
+  <div id="comparablesEstimatesComponent"></div>
+  </div>
+</div>
+      </div>
+    
+    <hr class="responsiveDivider">
+<div id="bottomPlacementLeadFormContainer">
+  <h3 class="h3 mvl">Contact Info</h3>
+  <div id="bottomLeadFormContainer"></div>
+</div>
+    <hr class="responsiveDivider" data-auto-test-id="discovery-pdp">
+    <div class="row mhn mtl ptl paXxsHidden maXxsHidden">
+      <div id="discoveryPdp"></div>
+    </div>
+
+    
+
+    <div class="row mvl" data-auto-testid="ads">
+      <!-- ads placeholder -->
+      <div id="subcontent1" class="miniCol24 xsCol24 smlCol12  mdCol12 lrgCol12 txtR prs"></div>
+      <!-- ads placeholder -->
+      <div id="subcontent2" class="miniCol24 xsCol24 smlCol12  mdCol12 lrgCol12 txtL pls"></div>
+    </div>
+
+      </div>
+
+  <div id="informationModalTooltipContainer"></div>
+  <div class="hideFully">
+    <img id="internal_tracking_pixel" src="https://origin-tracking.trulia.com/trackingPixel.gif?impSource=trulia&amp;type=det&amp;ptype=for_sale&amp;stype=overview&amp;uid=&amp;lts=190211pmrm534xidottrzr8wi2o0w602&amp;p1=3201069395&amp;s1=2275656110&amp;f1=14067&amp;ts=1549894359&amp;mid=1126111267&amp;plid1=5051634671&amp;st1=TX&amp;zipcode=77590" width="1" height="1" alt="tracking" />
+  </div>
+
+  <div id="adsDisplayContainer"></div>
+
+  <script type="application/javascript">
+  window.propertyWeb = {
+    INITIAL_ACTIONS: [
+      { type: "property-web/property/BOOTSTRAP_PROPERTY",
+        data: {
+          features: {"bathrooms":"2 baths","bedrooms":"3 beds"},
+          id: '3201069395',
+          listingId: '3201069395',
+          urlId: '/p/tx/texas-city/2810-6th-ave-n-texas-city-tx-77590--1126111267',
+          maloneId: '1126111267',
+          publicRecordId: 'TX1001754890',
+          isBuilderCommunity: false,
+          isForSale: true,
+          isOffMarket: false,
+          isPlan: false,
+          isSpecHome: false,
+          isStreetViewAvailable: false,
+          listingPrice: {"current":119998,"dollarFormat":"$119,998","previous":null,"hasChanged":false,"hasIncreased":false,"hasDecreased":false,"changeDifference":null,"changeDate":"","changePercentage":null},
+          location: {"streetNumber":"2810","street":"6th Ave N","apartmentNumber":"","latitude":29.390766,"longitude":-94.93597,"neighborhoodId":"","stateCode":"TX","city":"Texas City","zip":"77590","hasCalledGeocoder":false},
+          media: {"hasVideo":false,"hasPhoto":true,"hasThreeDTour":false,"primaryPhotoURL":"\/pictures\/thumbs_6\/zillowstatic\/ISi750fxpht4og0000000000.jpg","availablePhotoSizes":[{"width":70,"url":"\/pictures\/thumbs\/zillowstatic\/ISi750fxpht4og0000000000.jpg"},{"width":140,"url":"\/pictures\/thumbs_big\/zillowstatic\/ISi750fxpht4og0000000000.jpg"},{"width":320,"url":"\/pictures\/thumbs_3\/zillowstatic\/ISi750fxpht4og0000000000.jpg"},{"width":640,"url":"\/pictures\/thumbs_4\/zillowstatic\/ISi750fxpht4og0000000000.jpg"},{"width":1024,"url":"\/pictures\/thumbs_5\/zillowstatic\/ISi750fxpht4og0000000000.jpg"},{"width":2048,"url":"\/pictures\/thumbs_6\/zillowstatic\/ISi750fxpht4og0000000000.jpg"}],"photoCount":36,"photoBaseURL":"\/\/thumbs.trulia-cdn.com","mediaCollection":[{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISi750fxpht4og0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISi750fxpht4og0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/IS27i5e1yoolwg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/IS27i5e1yoolwg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISuou451s2n4ig0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISuou451s2n4ig0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISmissmunue7ig0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISmissmunue7ig0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISecqg4ojm6aig0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISecqg4ojm6aig0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/IS66o4mhfeycig0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/IS66o4mhfeycig0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISyzls3bb6qfig0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISyzls3bb6qfig0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISqtjgl47yhiig0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISqtjgl47yhiig0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISinh43y2q9lig0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISinh43y2q9lig0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISahfskryh1oig0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISahfskryh1oig0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISu0gtvutggowg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISu0gtvutggowg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/IS2bdg2lu9tqig0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/IS2bdg2lu9tqig0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISmudhdop88rwg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISmudhdop88rwg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISu4b4keq1ltig0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISu4b4keq1ltig0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISeob5vhl00uwg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISeob5vhl00uwg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISmy8s18mtcwig0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISmy8s18mtcwig0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/IS6i9tcbhsrwwg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/IS6i9tcbhsrwwg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISes6gj1il4zig0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISes6gj1il4zig0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISyb7hu4dkjzwg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISyb7hu4dkjzwg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/IS6m441vddw1jg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/IS6m441vddw1jg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISq555cy8cb2xg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISq555cy8cb2xg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISyf2sio95o4jg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISyf2sio95o4jg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISiz2ttr4435xg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISiz2ttr4435xg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISq90g0i5xf7jg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISq90g0i5xf7jg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISi3y3ib1p7ajg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISi3y3ib1p7ajg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISaxvrz4xgzcjg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISaxvrz4xgzcjg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISat0hbl0wu7xg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISat0hbl0wu7xg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/IS2rtfhys8rfjg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/IS2rtfhys8rfjg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/IS2z78b66uy4tg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/IS2z78b66uy4tg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISukr3zro0jijg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISukr3zro0jijg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISus5wsz1mq7tg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISus5wsz1mq7tg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISmeprglksaljg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISmeprglksaljg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISe8nfyegk2ojg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISe8nfyegk2ojg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/IS62l3g8ccuqjg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/IS62l3g8ccuqjg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/IS2ny4tewnmaxg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/IS2ny4tewnmaxg0000000000.jpg"},{"type":"media","original":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs_6\/zillowstatic\/ISyvirx184mtjg0000000000.jpg","thumbnail":"\/\/thumbs.trulia-cdn.com\/pictures\/thumbs\/zillowstatic\/ISyvirx184mtjg0000000000.jpg"}],"streetViewImageURLs":{"2048":"https:\/\/maps.googleapis.com\/maps\/api\/streetview?size=2048x1536&sensor=false&location=2810+6th+Ave+N%2C+Texas+City+TX+77590&client=gme-zillowinc3&signature=8XRwcZx0dkLBZHtp5BNODDQ4Roc=","1024":"https:\/\/maps.googleapis.com\/maps\/api\/streetview?size=1024x768&sensor=false&location=2810+6th+Ave+N%2C+Texas+City+TX+77590&client=gme-zillowinc3&signature=4hDw5YQL7vwDA18yW_HF1GsQtBI=","640":"https:\/\/maps.googleapis.com\/maps\/api\/streetview?size=640x480&sensor=false&location=2810+6th+Ave+N%2C+Texas+City+TX+77590&client=gme-zillowinc3&signature=76fHQq1bzMbC2OdyTb19cR22FEs=","320":"https:\/\/maps.googleapis.com\/maps\/api\/streetview?size=320x240&sensor=false&location=2810+6th+Ave+N%2C+Texas+City+TX+77590&client=gme-zillowinc3&signature=ucYLXwJy2yOWiORiGZO-sPQIIWI="},"streetViewMetadataURL":"https:\/\/maps.googleapis.com\/maps\/api\/streetview\/metadata?size=2048x2048&sensor=false&location=2810+6th+Ave+N%2C+Texas+City+TX+77590&client=gme-zillowinc3&signature=hvZlcQ_mwXcZrH5HRj3gU5-BaAI=","satelliteViewImageURL":"https:\/\/\/\/maps.googleapis.com\/maps\/api\/staticmap?client=gme-zillowinc3&zoom=18&size=640x480&maptype=satellite&sensor=false&center=29.390766%2C-94.93597&signature=sCgbWrazHgAKn31l-YLrumxa8vU=","backupPhotoURL":"\/default-property-media.svg","mediaPlayerIconURL":"\/iconArrowMediaPlayer.svg","threeDTourUrls":[]},
+          hoa: {"monthlyHOA":0},
+          mortgageRates: {"property_tax_rate":0.01,"interest_rate":{"30_year_fixed":{"excellent_credit":0.04331,"default":0.04331,"good_credit":0.04343,"low_credit":0.04741},"20_year_fixed":{"excellent_credit":0.04109,"default":0.04109,"good_credit":0.04249,"low_credit":0.04728},"15_year_fixed":{"excellent_credit":0.03735,"default":0.03735,"good_credit":0.03755,"low_credit":0.03837},"10_year_fixed":{"excellent_credit":0.0383,"default":0.0383,"good_credit":0.03793,"low_credit":0.03625}}},
+          propertyStatus: 'For Sale',
+          isSaveable: true,
+          streetViewAddress: '&quot;2810 6th Ave N, Texas City TX 77590&quot;'
+        }
+      },
+      { type: "property-web/lil/BOOTSTRAP_LIL",
+        data: {
+          config: {"schoolsTab":{"dataEndpoint":"\/json\/property\/schools","imageServer":"\/\/static.trulia-cdn.com","mapLayerConfig":{"schoolPointsEndpoint":"\/_ajax\/Geo\/SchoolGeoJSON\/schoolPoints\/","schoolDistrictsEndpoint":"\/_ajax\/Geo\/SchoolGeoJSON\/schoolDistricts\/","schoolZoneEndpoint":"\/_ajax\/Geo\/SchoolGeoJSON\/schoolZone\/","releaseVersion":"DEV"},"disclaimerUrl":"\/disclaimers#schools","assignedSchoolIds":["1019511","1019482","4806636","5700046746"],"localInfoUrl":"\/real_estate\/77590-Texas_City\/schools\/"},"commuteTab":{"dataEndpoint":"\/json\/property\/commute","addressSuggestionEndpoint":"\/json\/property\/addressSuggestion","demographicsDataEndpoint":"\/json\/property\/demographics","mapLayerConfig":{"tileEndpoint":"https:\/\/commute-prod.trulialocationz.com\/commute\/time_map\/data\/","tileVersion":"201902"},"iconImages":{"drivingUrl":"\/\/static.trulia-cdn.com\/images\/map\/markers\/Car.svg","transitUrl":"\/\/static.trulia-cdn.com\/images\/map\/markers\/Bus.svg","walkingUrl":"\/\/static.trulia-cdn.com\/images\/map\/markers\/Walk.svg","cyclingUrl":"\/\/static.trulia-cdn.com\/images\/map\/markers\/Bike.svg","pinUrl":"\/\/static.trulia-cdn.com\/images\/map\/markers\/pin_1x.png"},"disclaimerUrl":"\/disclaimers#commute"},"demographicsTab":{"dataEndpoint":"\/json\/property\/demographics","mapLayerConfig":{"medianAge":{"tileEndpoint":"https:\/\/tiles.trulia.com\/tiles\/median_age\/","tileVersion":"201902"},"married":{"tileEndpoint":"https:\/\/tiles.trulia.com\/tiles\/percent_married\/","tileVersion":"201902"},"single":{"tileEndpoint":"https:\/\/tiles.trulia.com\/tiles\/singles_living_alone\/","tileVersion":"201902"},"college":{"tileEndpoint":"https:\/\/tiles.trulia.com\/tiles\/percent_college\/","tileVersion":"201902"},"homeOwner":{"tileEndpoint":"https:\/\/tiles.trulia.com\/tiles\/owner_occupied\/","tileVersion":"201902"},"constructed":{"tileEndpoint":"https:\/\/tiles.trulia.com\/tiles\/year_built\/","tileVersion":"201902"},"moveIn":{"tileEndpoint":"https:\/\/tiles.trulia.com\/tiles\/median_move_in_year\/","tileVersion":"201902"},"multiUnit":{"tileEndpoint":"https:\/\/tiles.trulia.com\/tiles\/percent_multiunit\/","tileVersion":"201902"}},"iconImages":{"single":{"defaultUrl":"\/\/static.trulia-cdn.com\/images\/icons\/icon-single.svg","lowlightUrl":"\/\/static.trulia-cdn.com\/images\/icons\/icon-single-lowlight.svg"},"homeOwner":{"defaultUrl":"\/\/static.trulia-cdn.com\/images\/icons\/icon-homeowner.svg","lowlightUrl":"\/\/static.trulia-cdn.com\/images\/icons\/icon-homeowner-lowlight.svg"},"multiUnit":{"defaultUrl":"\/\/static.trulia-cdn.com\/images\/icons\/icon-multiunit.svg","lowlightUrl":"\/\/static.trulia-cdn.com\/images\/icons\/icon-multiunit-lowlight.svg"}},"disclaimerUrl":"\/disclaimers#demographics","localInfoUrl":"\/real_estate\/77590-Texas_City\/community-info\/"},"crimeTab":{"dataEndpoint":"\/json\/property\/crime","mapLayerConfig":{"tileEndpoint":"https:\/\/tile-crime-prod.trulia-local.com\/tiles\/crime_heatmap_v3\/","tileVersion":"20160704","tileDataEndpoint":"\/_service\/TruliaCrimeData","tileMarkerImageUrl":"\/\/static.trulia-cdn.com\/images\/flair\/map_markers\/map_marker_sheet_20140414.png"}},"amenitiesTab":{"dataEndpoint":"\/json\/property\/amenities","mapLayerConfig":{"restaurants":{"tileEndpoint":"https:\/\/tiles.trulia.com\/tiles\/restaurants\/","tileDataEndpoint":"https:\/\/tiles.trulia.com\/tiles\/restaurants_data\/","tileVersion":"201902"},"groceries":{"tileEndpoint":"https:\/\/tiles.trulia.com\/tiles\/groceries\/","tileDataEndpoint":"https:\/\/tiles.trulia.com\/tiles\/groceries_data\/","tileVersion":"201902"},"nightlife":{"tileEndpoint":"https:\/\/tiles.trulia.com\/tiles\/nightlife\/","tileDataEndpoint":"https:\/\/tiles.trulia.com\/tiles\/nightlife_data\/","tileVersion":"201902"},"cafes":{"tileEndpoint":"https:\/\/tiles.trulia.com\/tiles\/cafes\/","tileDataEndpoint":"https:\/\/tiles.trulia.com\/tiles\/cafes_data\/","tileVersion":"201902"},"shopping":{"tileEndpoint":"https:\/\/tiles.trulia.com\/tiles\/shopping\/","tileDataEndpoint":"https:\/\/tiles.trulia.com\/tiles\/shopping_data\/","tileVersion":"201902"},"arts":{"tileEndpoint":"https:\/\/tiles.trulia.com\/tiles\/arts\/","tileDataEndpoint":"https:\/\/tiles.trulia.com\/tiles\/arts_data\/","tileVersion":"201902"},"beauty":{"tileEndpoint":"https:\/\/tiles.trulia.com\/tiles\/beauty\/","tileDataEndpoint":"https:\/\/tiles.trulia.com\/tiles\/beauty_data\/","tileVersion":"201902"},"gyms":{"tileEndpoint":"https:\/\/tiles.trulia.com\/tiles\/gyms\/","tileDataEndpoint":"https:\/\/tiles.trulia.com\/tiles\/gyms_data\/","tileVersion":"201902"}}}}
+        }
+      },
+      { type: "property-web/blocks/PROPERTY_BLOCKS",
+        data: {
+          blocks: {"isStreetViewBlocked":false,"isStreetAddressBlocked":false}
+        }
+      },
+      {
+        type: "property-web/ads/BOOTSTRAP_ADS",
+        data: {
+          ads: {"adUnitPath":"Property_Details\/Buy_Agent","adTargeting":{"city":"texas_city","state":"tx","cnty":"galveston","hood":"","dma":"192","env":"prod","oh":"no","lot":"11","price":"119998","prange":"100-149k","sqft":"1300","sqftrange":"1000-1499","park":"no","zip":"77590","yrblt":"1965","aamgnrc1":"2810 6th Ave N ","stale":"no","pid":"1126111267","proptp":"sfh","ba":"2","bd":"3","sid":"2275656110","listtp":"buy_agent","user":"ojl","mlat":"29.390766","mlong":"-94.93597","tflag":""}}
+        }
+      },
+      {
+        type: "property-web/config/BOOTSTRAP_PAGE_CONFIG",
+        data: {
+          abTests: {"isPDPUpsell":false,"isLeadFormAgentCardsBelow":false,"isPaymentModuleEnabled":false,"isPostLeadModuleRedirected":false,"isFeatureHighlightsEnabled":false,"isLilFullscreen":false,"isLilNavigationAndLeadFormReduced":false,"isGlobalSearchInNav":false,"isInlineCarouselEnabled":false,"isGoogleSingleTapSignUpEnabled":false,"isNewListingsNearbyEnabled":false,"isOneClickLeadSubmitDisabled":false,"isLeadFormNoAgentCardsInTopThirdMessageAgentEnabled":false,"isLeadFormNoAgentCardsInTopThirdRequestInfoEnabled":false},
+          baseUriPath: "\/",
+          baseImagePath: "\/\/static.trulia-cdn.com\/images",
+          graphQlUrl: "https:\/\/graphql.trulia.com\/graphql",
+        }
+      },
+      { type: "property-web/compareblesEstimates/BOOTSTRAP_COMPARABLES_ESTIMATES",
+        data: {
+          comparablesMarkers: [],
+          estimatesEndpoint: "\/json\/property\/estimates"
+        }
+      },
+      {
+        type: "collaboration/UPDATE_SAVED_PROPERTIES",
+        pids: []
+      },
+      {
+        type: "auth/LOG_OUT"
+      },
+      {
+        type: "property-web/tracking/BOOTSTRAP_TRACKING",
+        data: {
+          impressionTrackingPixelUrl: "https:\/\/origin-tracking.trulia.com\/trackingPixel.gif?impSource=trulia&type=det&ptype=for_sale&uid=&lts=190211pmrm534xidottrzr8wi2o0w602&p1=3201069395&s1=2275656110&f1=14067&mid=1126111267&plid1=5051634671&st1=TX&zipcode=77590",
+          state: {"codebase":"www|release-2019.6.2","siteSection":"buy","pageType":"pdp","pageDetails":"overview","pageName":null,"truliaUserID":null,"anonymousUserId":null,"userStatus":"unknown","userType":null,"userLoginStatus":null,"pageTitle":null,"automaticTrackState":true,"server_id":"602"}
+        }
+      },
+      {
+        type: "property-web/neighborhoodReviews/BOOTSTRAP_NEIGHBORHOOD_REVIEWS",
+        data: {"canShowNeighborhoodReviews":true}
+      },
+      {
+        type: "property-web/neighborhoodReviews/BOOTSTRAP_LOCAL_PROTECTIONS",
+        data: {"city":"Texas City","county":"Galveston","state":"Texas","canShowLocalProtections":true}
+      },
+      {
+        type: "property-web/appDownloadBanner/BOOTSTRAP_APP_DOWNLOAD_BANNER",
+        data: {
+          isEnabled: false,
+          config: Array
+        }
+      },
+      {
+        type: "property-web/discoveryModules/BOOTSTRAP_DISCOVERY_MODULES",
+        data: {
+          homepageApiHost: "https:\/\/external-elb.zgtkong-prod.trulia-cdn.net\/homepage-api-prod\/"
+        }
+      },
+      {
+        type: "property-web/neighborhoodReviews/BOOTSTRAP_NEIGHBORHOOD_OVERVIEW",
+        data: {"canShowNeighborhoodOverview":false,"locationId":""}
+      },
+      {
+        type: "property-web/newListings/NEW_LISTINGS_MODULE",
+        data: {
+          newListingsPath: "\/_ajax\/Search\/SearchUrlProperties\/index",
+          newListingsUrl: "\/for_sale\/Texas_City,TX\/29.390766,-94.93597_poi\/10_r\/59999-179997_price\/3_nl\/",
+          citySrpUrl: "\/TX\/Texas_City\/",
+        }
+      }
+    ]
+  };
+</script>
+
+  
+
+  
+      
+<footer class="pg-footer pan">
+  
+      
+
+          <div class="backgroundLowlight content contentResponsive">
+    <div class="media mvn prxxl pbl">
+      <img src="//static.trulia-cdn.com/images/footer/discovery-ill.svg" width="160" height="100" class="h4 mediaImg linkTypeReversed typeEmphasize">
+      <div class="mediaBody h7 ptl prxl prxxl">
+        This Single-Family Home located at 2810 6th Ave N, Texas City TX, <a href='/property-sitemap/TX/Galveston-County-48167/77590/'>77590</a> is currently for sale and has been listed on Trulia for 1 days. This property is listed by NRT Austin - Houston for $119,998. 2810 6th Ave N has 3 beds, 2 baths, and approximately 1,300 square feet. The property has a lot size of 6695 sqft and was built in 1965. 2810 <a href='/property-sitemap/TX/Galveston-County-48167/77590/6th_Ave_N/'>6th Ave N</a> is in <a href='/real_estate/Texas_City-Texas/'>Texas City</a> and in ZIP Code <a href='/real_estate/77590-Texas_City/'>77590</a>. 
+      </div>
+    </div>
+      
+
+                                    
+<div class="plld phm pbxl">
+      <h2>Parcel Information for 2810 6th Ave N</h2>
+  
+    <table class="table tableBasic">
+    <thead>
+      <tr>
+        <th colspan="2" class="txtL">What's near 2810 6th Ave N</th>
+      </tr>
+    </thead>
+    <tbody>
+            <tr>
+        <td>Whole Foods Distance</td>
+        <td>37.59 miles</td>
+      </tr>
+                        <tr>
+        <td>Starbucks Distance</td>
+        <td>0.84 miles</td>
+      </tr>
+                  <tr>
+        <td>William P Hobby is ...</td>
+        <td>27.09 miles</td>
+      </tr>
+                  <tr>
+        <td>Landmarks</td>
+        <td>Galveston Ocean Seawall Beaches, Moody Gardens, Cinemark Movies 12, Magical Winter Lights, The Moody Mansion, Ocean Star Museum, Galveston Railroad Museum, Magic Carpet Golf, Kemah Boardwalk, Kemah Crawfish Festival</td>
+      </tr>
+          </tbody>
+  </table>
+  
+    <table class="table tableBasic mtl">
+    <thead>
+      <tr>
+        <th colspan="2" class="txtL">Facts &amp; Figures about 2810 6th Ave N</th>
+      </tr>
+    </thead>
+    <tbody>
+            <tr>
+        <td>Slope of lot</td>
+        <td>Level</td>
+      </tr>
+                  <tr>
+        <td>Elevation of property</td>
+        <td>12 ft</td>
+      </tr>
+                  <tr>
+        <td>Tree Cover of lot</td>
+        <td>23 %</td>
+      </tr>
+          </tbody>
+  </table>
+  </div>
+  </div>
+  
+  <div class="backgroundInverse content contentResponsive pbm phl">
+    <div class="containerFluid phn">
+      <div class="row typeReversed">
+                                <div class="four-column xsCol24 smCol4 mdCol4 lrgCol4">
+              <div class="listHeader h6 mrl mtm">Nearby Real Estate</div>
+<div class="listContent">
+          <div class="pvs">
+      <a class="linkLowlight "  href="/houses-for-sale-near-me" title="Houses for Sale Near Me" >Houses for Sale Near Me</a><span class="breaker typeLowlight" style="opacity: .2;"> | </span>
+    </div>
+            <div class="pvs">
+      <a class="linkLowlight "  href="/TX/La_Marque/" title="La Marque Real Estate" >La Marque Real Estate</a><span class="breaker typeLowlight" style="opacity: .2;"> | </span>
+    </div>
+  
+</div>
+            </div>
+                                          <div class="four-column xsCol24 smCol4 mdCol4 lrgCol4">
+              <div class="listHeader h6 mrl mtm"><a href="/sitemaps/neighborhood/Texas/Texas_City/" title="Texas City Neighborhoods" class="linkTypeReversed">Texas City Neighborhoods</a></div>
+<div class="listContent">
+          <div class="pvs">
+      <a class="linkLowlight "  href="/TX/Texas_City,163791,Nadeau/" title="Nadeau" >Nadeau</a><span class="breaker typeLowlight" style="opacity: .2;"> | </span>
+    </div>
+            <div class="pvs">
+      <a class="linkLowlight "  href="/TX/Texas_City,102246,Heights/" title="Heights" >Heights</a><span class="breaker typeLowlight" style="opacity: .2;"> | </span>
+    </div>
+  
+</div>
+            </div>
+                                          <div class="four-column xsCol24 smCol4 mdCol4 lrgCol4">
+              <div class="listHeader h6 mrl mtm"><a href="/sitemaps/city-for-sale/TX/Texas_City/" title="Texas City Property Types" class="linkTypeReversed">Texas City Property Types</a></div>
+<div class="listContent">
+          <div class="pvs">
+      <a class="linkLowlight "  href="/for_sale/Texas_City,TX/SINGLE-FAMILY_HOME_type/" title="Single Family Homes" >Single Family Homes</a><span class="breaker typeLowlight" style="opacity: .2;"> | </span>
+    </div>
+            <div class="pvs">
+      <a class="linkLowlight "  href="/for_sale/Texas_City,TX/CONDO_type/" title="Condos" >Condos</a><span class="breaker typeLowlight" style="opacity: .2;"> | </span>
+    </div>
+            <div class="pvs">
+      <a class="linkLowlight "  href="/for_sale/Texas_City,TX/TOWNHOUSE_type/" title="Townhomes" >Townhomes</a><span class="breaker typeLowlight" style="opacity: .2;"> | </span>
+    </div>
+            <div class="pvs">
+      <a class="linkLowlight "  href="/for_sale/Texas_City,TX/COOP_type/" title="Co-Ops" >Co-Ops</a><span class="breaker typeLowlight" style="opacity: .2;"> | </span>
+    </div>
+            <div id="toggleColumn2" class="hideVisually">
+        <div class="pvs">
+      <a class="linkLowlight "  href="/for_sale/Texas_City,TX/APARTMENT_type/" title="Apartments" >Apartments</a><span class="breaker typeLowlight" style="opacity: .2;"> | </span>
+    </div>
+            <div class="pvs">
+      <a class="linkLowlight "  href="/for_sale/Texas_City,TX/MOBILE|MANUFACTURED_type/" title="Mobile/Manufactured Homes" >Mobile/Manufactured Homes</a><span class="breaker typeLowlight" style="opacity: .2;"> | </span>
+    </div>
+  
+  </div>
+  <a href="#toggleColumn2" class="toggle typeHighlight h7" data-toggle-text="Less">More <i class="iconDownOpen"></i></a>
+</div>
+            </div>
+                                          <div class="four-column xsCol24 smCol4 mdCol4 lrgCol4">
+              <div class="listHeader h6 mrl mtm">Real Estate and Mortgage Guides</div>
+<div class="listContent">
+          <div class="pvs">
+      <a class="linkLowlight "  href="/real_estate/Texas_City-Texas/" title="Texas City Real Estate Guide" >Texas City Real Estate Guide</a><span class="breaker typeLowlight" style="opacity: .2;"> | </span>
+    </div>
+            <div class="pvs">
+      <a class="linkLowlight "  href="/real_estate/Texas_City-Texas/schools/" title="Texas City Schools" >Texas City Schools</a><span class="breaker typeLowlight" style="opacity: .2;"> | </span>
+    </div>
+            <div class="pvs">
+      <a class="linkLowlight "  href="/new-for-sale-properties/TX/" title="Newest Homes for Sale in Texas" >Newest Homes for Sale in Texas</a><span class="breaker typeLowlight" style="opacity: .2;"> | </span>
+    </div>
+            <div class="pvs">
+      <a class="linkLowlight "  href="/new-for-rent-properties/TX/" title="Newest Rentals in Texas" >Newest Rentals in Texas</a><span class="breaker typeLowlight" style="opacity: .2;"> | </span>
+    </div>
+            <div id="toggleColumn3" class="hideVisually">
+        <div class="pvs">
+      <a class="linkLowlight "  href="/mortgage-rates/Texas_City,TX/" title="Texas City Mortgage" >Texas City Mortgage</a><span class="breaker typeLowlight" style="opacity: .2;"> | </span>
+    </div>
+            <div class="pvs">
+      <a class="linkLowlight "  href="/refinance-rates/Texas_City,TX/" title="Texas City Refinance" >Texas City Refinance</a><span class="breaker typeLowlight" style="opacity: .2;"> | </span>
+    </div>
+            <div class="pvs">
+      <a class="linkLowlight "  href="/for_sale/4817070_sd/" title="Dickinson Independent School District" >Dickinson Independent School District</a><span class="breaker typeLowlight" style="opacity: .2;"> | </span>
+    </div>
+            <div class="pvs">
+      <a class="linkLowlight "  href="/for_sale/4842510_sd/" title="Texas City Independent School District" >Texas City Independent School District</a><span class="breaker typeLowlight" style="opacity: .2;"> | </span>
+    </div>
+  
+  </div>
+  <a href="#toggleColumn3" class="toggle typeHighlight h7" data-toggle-text="Less">More <i class="iconDownOpen"></i></a>
+</div>
+            </div>
+                          </div>
+    </div>
+  </div>
+
+      
+
+
+<div class="backgroundInverse content contentResponsive typeReversed phl">
+      <ul class="listInline man pbm ptm footer_nav">
+              <li>
+          <a class="linkLowlight " href="//www.trulia.com/about/" title="About Trulia" >About Trulia</a><span class="breaker typeLowlight" style="opacity: .2;">
+        </li>
+              <li>
+          <a class="linkLowlight " href="//www.zillowgroup.com/about-zillow-group/" title="About Zillow Group" rel="nofollow">About Zillow Group</a><span class="breaker typeLowlight" style="opacity: .2;">
+        </li>
+              <li>
+          <a class="linkLowlight " href="//www.trulia.com/about/careers/" title="Careers" >Careers</a><span class="breaker typeLowlight" style="opacity: .2;">
+        </li>
+              <li>
+          <a class="linkLowlight " href="//www.trulia.com/newsroom/" title="Newsroom" rel="nofollow">Newsroom</a><span class="breaker typeLowlight" style="opacity: .2;">
+        </li>
+              <li>
+          <a class="linkLowlight " href="http://investors.zillowgroup.com/" title="Investor Relations" rel="nofollow">Investor Relations</a><span class="breaker typeLowlight" style="opacity: .2;">
+        </li>
+              <li>
+          <a class="linkLowlight " href="//www.trulia.com/terms/advertisers/" title="Advertising Terms" rel="nofollow">Advertising Terms</a><span class="breaker typeLowlight" style="opacity: .2;">
+        </li>
+              <li>
+          <a class="linkLowlight " href="//www.trulia.com/info/privacy/" title="Privacy" rel="nofollow">Privacy</a><span class="breaker typeLowlight" style="opacity: .2;">
+        </li>
+              <li>
+          <a class="linkLowlight " href="//www.trulia.com/info/terms/" title="Terms of Use" rel="nofollow">Terms of Use</a><span class="breaker typeLowlight" style="opacity: .2;">
+        </li>
+              <li>
+          <a class="linkLowlight " href="//www.trulia.com/info/listings-quality-policy/" title="Listings Quality Policy" rel="nofollow">Listings Quality Policy</a><span class="breaker typeLowlight" style="opacity: .2;">
+        </li>
+              <li>
+          <a class="linkLowlight " href="http://www.zillow.com/corp/SATerms.htm" title="Subscription Terms" rel="nofollow">Subscription Terms</a><span class="breaker typeLowlight" style="opacity: .2;">
+        </li>
+              <li>
+          <a class="linkLowlight " href="https://preferences-mgr.truste.com/?type=trulia&pid=trulia01&aid=trulia01" title="Ad Choices" rel="nofollow">Ad Choices</a><span class="breaker typeLowlight" style="opacity: .2;">
+        </li>
+              <li>
+          <a class="linkLowlight " href="https://support.trulia.com/hc/en-us" title="Help" >Help</a><span class="breaker typeLowlight" style="opacity: .2;">
+        </li>
+          </ul>
+  
+  <div><div class="typeLowlight h8 pbl">Copyright &copy; 2019 Trulia, LLC. All rights reserved. <a href="https://www.hud.gov/program_offices/fair_housing_equal_opp" rel="nofollow" class="linkLowlight"><span class="iconFHEO h6 pvs pls"></span>Equal Housing Opportunity.</a></div>
+</div>
+</div>
+
+
+  </footer>
+
+<script>
+  if (typeof $ !== 'undefined') {
+    $(document).ready(function () {
+      $('.toggle').truliaToggle();
+    });
+  }
+</script>
+  
+
+
+  
+  
+  
+
+  
+    <script src="//js-sec.indexww.com/ht/htw-trulia.js" defer></script>
+        
+  
+
+
+
+  
+
+  <script>
+    window.globals = {
+      site_root: "/",
+      isUserLoggedIn: false,
+      isPro: false
+    };
+
+                                      var _supports_my_trulia = 1;
+                        var site_root = "/";
+                        var _SITE_ROOT = "/";
+                        var _IMAGE_SERVER_ROOT = "//static.trulia-cdn.com";
+                        var _ENVIRONMENT = "PROD";
+                        var _IS_SHOWING_MODAL = false;
+                        var _MIN_PASSWORD_LENGTH = 5;
+                        var _MAX_PASSWORD_LENGTH = 50;
+                        var _z_api_host = "mortgageapi.zillow.com";
+          
+    
+      var qpn_NAMES =
+    {
+      'site':                'Trulia',
+      'site_possessive':     'Trulia\'s',
+      'mytrulia':            'My Trulia',
+      'email_domain':        'trulia.com',
+      'truliamap':           'TruliaMap',
+      'voices':              'Trulia Voices',
+      'account_source':      'trulia',
+      'secondary_subdomain': ''
+    },
+    _js_server_root       = '//static.trulia-cdn.com/javascript/578dd5a/',
+    _release_version_tab  = 'release-2019.6.2',
+    _fb_app_id            = '183577541666001';
+    _fb_permissions       = 'email,user_location';
+    _google_client_id     = '487011081137-peeju6k4k30q731m6oo3k0kas0mqa5a3.apps.googleusercontent.com';
+
+var trulia = (typeof(trulia) !== "undefined") ? trulia : {};
+    trulia.tracking = trulia.tracking || {};
+    trulia.tracking.omniture_id = 'truliacom';
+    
+
+            window.trulia = window.trulia || {};
+        window.trulia.navbar = {"abTests":[],"links":[{"label":"Buy","uri":"\/TX\/Texas_City\/","tracking_string":"Buy","children":[{"group":{"heading":"Texas City","links":[{"label":"Homes for Sale","uri":"\/TX\/Texas_City\/","tracking_string":"Buy|City|HomesForSale"},{"label":"Open Houses","uri":"\/for_sale\/Texas_City,TX\/p_oh\/","tracking_string":"Buy|City|OpenHouse"},{"label":"New Homes","uri":"\/for_sale\/Texas_City,TX\/new_homes_lt\/","tracking_string":"Buy|City|NewHome"},{"label":"Recently Sold","uri":"\/sold\/Texas_City,TX\/","tracking_string":"Buy|City|RecentlySold"},{"divider":true}]}},{"label":"See Newest Listings","uri":"\/new-for-sale-properties\/TX\/","tracking_string":"Buy|Newest"}]},{"label":"Rent","uri":"\/for_rent\/Texas_City,TX\/","tracking_string":"Rent","children":[{"group":{"heading":"Texas City","links":[{"label":"All Rentals","uri":"\/for_rent\/Texas_City,TX\/","tracking_string":"Rent|City|All"},{"label":"Apartments for Rent","uri":"\/for_rent\/Texas_City,TX\/APARTMENT,APARTMENT_COMMUNITY,APARTMENT%7CCONDO%7CTOWNHOUSE,CONDO,COOP,LOFT,TIC_type\/","tracking_string":"Rent|City|Apartment"},{"label":"Houses for Rent","uri":"\/for_rent\/Texas_City,TX\/SINGLE-FAMILY_HOME_type\/","tracking_string":"Rent|City|Home"},{"label":"Rooms for Rent","uri":"\/for_rent\/Texas_City,TX\/ROOM_FOR_RENT_type\/","tracking_string":"Rent|City|Room"},{"divider":true}]}},{"label":"See Newest Listings","uri":"\/new-for-rent-properties\/TX\/","tracking_string":"Rent|Newest"},{"divider":true},{"label":"Post A Rental Listing","uri":"\/post-rental\/","tracking_string":"Rent|SLS"}]},{"label":"Mortgage","uri":"\/mortgages\/","tracking_string":"Mortgage","children":[{"group":{"heading":"Texas City","links":[{"label":"Mortgage Overview","uri":"\/mortgages\/","tracking_string":"Mortgage"},{"label":"Get Pre-Qualified","uri":"\/mortgages\/pre-approval?omni_src=mortgage%7Cglobal_nav","tracking_string":"Mortgage|Preapproval"},{"label":"Mortgage Rates","uri":"\/mortgage-rates\/Texas_City,TX\/","tracking_string":"Mortgage|Mortgage"},{"label":"Refinance Rates","uri":"\/refinance-rates\/Texas_City,TX\/","tracking_string":"Mortgage|Refinance"}]}},{"divider":true},{"label":"Mortgage Calculator","uri":"\/mortgage-payment-calculator\/","tracking_string":"Mortgage|Calculators"},{"label":"Affordability Calculator","uri":"\/house-affordability-calculator\/","tracking_string":"Mortgage|Calculators"},{"label":"Rent vs Buy Calculator","uri":"\/rent_vs_buy\/","tracking_string":"Mortgage|Calculators"},{"label":"Refinance Calculator","uri":"\/home-loan-refinance-calculator\/","tracking_string":"Mortgage|Calculators"}]},{"label":"Local Info","uri":"\/real_estate\/Texas_City-Texas\/","tracking_string":"LocalInfo","children":[{"group":{"heading":"Texas City","links":[{"label":"Real Estate Overview","uri":"\/real_estate\/Texas_City-Texas\/","tracking_string":"LocalInfo|Local|Home|City|Overview"},{"label":"Market Trends","uri":"\/real_estate\/Texas_City-Texas\/market-trends\/","tracking_string":"LocalInfo|Local|Home|City|Trends"},{"label":"Schools","uri":"\/real_estate\/Texas_City-Texas\/schools\/","tracking_string":"LocalInfo|Local|Home|City|Schools"},{"label":"Crime","uri":"\/real_estate\/Texas_City-Texas\/crime\/","tracking_string":"LocalInfo|Local|Home|City|Crime"}]}},{"divider":true},{"label":"All Trulia Neighborhood Guides","uri":"\/local-info\/cities","tracking_string":"LocalInfo|Neighborhood_Guides"},{"label":"Maps by Trulia","uri":"\/local\/","tracking_string":"LocalInfo|Local|Maps"}]},{"label":"Additional Resources","tracking_string":"AdditionalResources","children":[{"label":"Trulia Blogs","uri":"\/blog\/","tracking_string":"AdditionalResources|Blog"},{"label":"Go Mobile with Trulia","uri":"\/mobile\/","tracking_string":"AdditionalResources|Mobile"},{"label":"Advice","uri":"\/voices\/Texas_City---36545\/","tracking_string":"AdditionalResources|Voices","children":[{"label":"Texas City Q&A","uri":"\/voices\/Texas_City---36545\/","tracking_string":"AdditionalResources|Voices|LocationQA"},{"label":"Trulia Guides","uri":"\/guides\/","tracking_string":"AdditionalResources|Voices|Guides"}]},{"label":"Ask a Question","uri":"\/ask\/","tracking_string":"AdditionalResources|Ask"},{"label":"Help Center","uri":"\/help\/","tracking_string":"AdditionalResources|Help"},{"group":{"heading":"For Professionals","links":[{"label":"Get Leads by ZIP","uri":"\/real-estate-leads\/","tracking_string":"AdditionalResources|PremierAgent","nofollow":true},{"label":"Get Mortgage Leads","uri":"\/advertising\/mortgage-leads\/","tracking_string":"AdditionalResources|professional lender advertising"},{"label":"Submit Listings","uri":"\/submit_listings\/","tracking_string":"AdditionalResources|Listings","nofollow":true}]}}]}],"location_display_name":"Texas City, TX","location_city_state_display":"Texas City, TX"};
+        window.trulia.isMobileUser = false;
+        window.trulia.isSearchBySchoolsEnabled = true;
+        window.trulia.page_name = 'details';
+        window.trulia.isSearchInGlobalNavEnabled = false;
+    
+    window.trulia = window.trulia || {};
+    window.isDtmAsync = true;
+  </script>
+
+  <script defer src="//maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBiBQk23rLklPI3a3kpWZKvQySC0wHf1Pk&libraries=geometry"></script>
+
+  
+    <script type="text/javascript">
+      var pdpAnalyticsDatalayer = {"codebase":"www|release-2019.6.2","siteSection":"buy","pageType":"pdp","pageDetails":"overview","pageName":null,"truliaUserID":null,"anonymousUserId":"190211pmrm534xidottrzr8wi2o0w602","userStatus":null,"userType":null,"userLoginStatus":"logged out","pageTitle":null,"automaticTrackState":false,"userEngagementScore":"user|engagement score|null","listingID":"3201069395","propertyId":"3201069395","listingState":"TX","listingCounty":"Galveston","listingCity":"Texas City","listingNeighborhood":null,"listingZip":"77590","listingStatus":"For Sale","listingPrice":119998,"propertyType":"Single-Family Home","listingType":"RESALE","additionalListingTypes":"","maloneID":"1126111267","builderName":"","devicePermissions":"push notifications|disabled","server_id":"602"};
+      if (typeof (localStorage) !== 'undefined') {
+        var pushPermissionGranted = localStorage.getItem('isPushNotificationsEnabled') || '';
+        if (pushPermissionGranted === 'enabled') {
+          pdpAnalyticsDatalayer['devicePermissions'] = 'push notifications|enabled';
+        }
+      }
+      window.pdpDataLayer = pdpAnalyticsDatalayer;
+      window.pdpDataConstants = {"page_details":{"OVERVIEW":"overview","SRP_LIST":"list","SRP_MAP":"map","SRP_HYBRID":"hybrid","BOARD":"board","BOARD_EDIT":"board:edit board","BOARD_EMAIL_ALERTS":"board:email alerts","NEARBY_CRIMES":"nearby crimes","NEARBY_SCHOOLS":"nearby schools","LONG_FORM_BUYER_TYPE":"long form:buyer type","CHANGE_PASSWORD":"change password","ENTER_EMAIL":"enter email","CHOOSE_PASSWORD":"choose password","ENTER_PASSWORD":"enter password","BOARD_SHARED":"shared board","ALL":"all","BOARD_LIST":"board list","BOARD_HYBRID":"board hybrid","BUY":"buy","RENT":"rent","PROPERTY_ADDRESS":"property address","LEASE_LENGTH":"lease length","MOVE_IN_DATE":"move in date","RENT_AND_UTILITIES":"rent and utilities","UPLOAD_PHOTO":"upload photo","BEDROOMS_AND_BATHROOMS":"bedrooms and bathrooms","DESCRIPTION":"description","NUMBER_OF_OCCUPANTS":"number of occupants","ABOUT_YOU":"about you","PREVIEW":"preview","CONFIRM_YOUR_PHONE":"confirm your phone","ENTER_CONFIRMATION_CODE":"enter confirmation code","CONTACT_PREFERENCE":"contact preference","THANK_YOU":"thank you","LISTING_DEACTIVATE":"listing:deactivate","LISTING_EDIT":"listing:edit","NEAR_YOU":"near you","PUSH_NOTIFICATIONS":"push notifications","NAME_YOUR_SEARCH":"name your search","SAVED_SEARCHES":"saved searches","RECENT_SEARCHES":"recent searches","CONFIRM_UNSUBSCRIBE":"confirm unsubscribe","CONFIRM_DELETE_SAVED_SEARCH":"confirm delete saved search","CONFIRM_INFO_REQUEST":"confirm info request","STANDALONE_LEAD_FORM":"standalone lead form","MORTGAGE_CALCULATOR":"mortgage calculator","LANDING":"landing"},"page_type":{"DISCOVERY":"discovery","SRP":"srp","PDP":"pdp","FEED":"feed","BOARDS":"my boards","BLOG":"blog","INTERSTITIAL":"interstitial","OVERLAY":"overlay","PROMPT":"custom prompt","USER_PROFILE":"user profile","RENTAL_RESUME":"rental resume","COLLAB":"collab","NOTIFICATIONS":"notifications","LIST_PROPERTY":"list a property","LIST_ROOM":"list a room","MY_LISTINGS":"my listings","SAVED_SEARCHES":"saved searches","SAVED_HOMES":"saves","EDIT_PROFILE":"edit profile","EMAIL_PREFERENCES":"email preferences","CALCULATORS":"calculators","LONG_FORM":"long form"},"site_section":{"HOME":"home","BUY":"buy","SOLD":"sold","SELL":"sell","RENT":"rent","MORTGAGE":"mortgage","FIND_AGENT":"find agent","MORE":"more","ACCOUNT":"account","FOR_PROFESSIONALS":"for pros","MICROSITE":"microsite","ACTIVITY":"activity"}}
+    </script>
+  
+
+  <script type="text/javascript">
+    window.propertyWebWebpackPublicPath = "//static.trulia-cdn.com/javascript/578dd5a/include/js/_built/property-web-assets/";
+    trulia.analytics = { automaticTrackState: false };
+
+    var txlInterval = setInterval(function () {
+      if (window.$ && $ && $.fn && $.fn.truliaToggle) {
+        $('.toggle').truliaToggle();
+        clearInterval(txlInterval);
+      }
+    }, 150);
+  </script>
+
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script defer src="//static.trulia-cdn.com/javascript/578dd5a/include/js/_built/application/pdp/property-web/vendor.property-web.41d732dfd5fd11ddef3e.js"></script>
+  <script defer src="//static.trulia-cdn.com/javascript/578dd5a/include/js/_built/application/pdp/property-web/main.property-web.78d59fdf94a639dd2a8d.js"></script>
+
+      <script type='text/javascript'>
+      
+
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function()
+{ (i[r].q=i[r].q||[]).push(arguments)}
+,i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-47944506-1', 'trulia.com');
+ga('send', 'pageview');
+
+    </script>
+  
+
+  
+      <script src="//static.trulia-cdn.com/javascript/578dd5a/include/js/_built/comscore/comscore.9c7af1273c4531eff748.js" async ></script>
+    <noscript>
+      <img src="http://b.scorecardresearch.com/p?c1=2&c2=6036206&cv=2.0&cj=1" />
+    </noscript>
+  
+
+  
+
+  <script type='text/javascript'>
+    trulia.data = trulia.data || {};
+
+    trulia.data.user = {"userId":"","secondaryId":"190211pmrm534xidottrzr8wi2o0w602","sessionId":"d74kkfvqgfbqolup81i5lg4vo1"};
+</script>
+
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"28d67b3a7a","applicationID":"61744694","transactionName":"ZANTYEFXXBIFVE1cDl1JckFAQl0MS2dcRxJaFUVRXUJnEwh0VlsVQQldWFZECFsBT1xWFEcDbkRWREEIF0NcWxVsE0NY","queueTime":0,"applicationTime":523,"atts":"SEREFglNT01GVhsPGk4b","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+
+<!-- T:537.33515739441 H:602 S:90035 M:14680064 P:14680064 -->

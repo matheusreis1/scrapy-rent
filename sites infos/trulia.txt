@@ -1,0 +1,17 @@
+"trulia": {
+    title,
+    manager,
+    type,
+    price,
+    price per month,
+    number of beds,
+    number of baths,
+    sqft,
+    images,
+    infos about neighborhood,
+    new homes and plans,
+    community details,
+    contact info,
+    safe neighborhoods,
+    homes under 800,000
+}

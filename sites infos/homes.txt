@@ -1,0 +1,19 @@
+"homes": {
+    title,
+    price,
+    street,
+    city,
+    zip,
+    number of beds,
+    number of bathrooms,
+    sqft,
+    images,
+    overview,
+    home details,
+    contact info,
+    price history,
+    schools,
+    mls infos,
+    home description,
+    nearby zipcodes
+}

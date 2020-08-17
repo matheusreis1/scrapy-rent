@@ -1,0 +1,28 @@
+{
+    "title": "The Wilson", 
+    "address": {
+        "item_street_address": "1623 Main St",
+        "item_address_locality": "Dallas",
+        "item_address_region": "TX", 
+        "item_address_postal_code": "75201"
+    }, 
+    "price": "$874+", 
+    "beds": "Studio-2 Beds", 
+    "pets": "Pets OK", 
+    "phone": "(469) 610-2213", 
+    "images": [
+        "https://rentpath-res.cloudinary.com/t_rp,g_auto,c_fill_pad,f_auto,q_auto:low,e_improve,w_480,h_280/d7c3469a5c295b66047770eddef070ae", 
+        "https://rentpath-res.cloudinary.com/t_rp,g_auto,c_fill_pad,f_auto,q_auto:low,e_improve,w_480,h_280/740899f3045001468728c9d59124c9a1", 
+        "https://rentpath-res.cloudinary.com/t_rp,g_auto,c_fill_pad,f_auto,q_auto:low,e_improve,w_480,h_280/8e069fc6c1dcecb21387e165ebf19521", 
+        "https://rentpath-res.cloudinary.com/t_rp,g_auto,c_fill_pad,f_auto,q_auto:low,e_improve,w_480,h_280/5a53ab5041afa4bb3b0ff641e112ae40", 
+        "https://rentpath-res.cloudinary.com/t_rp,g_auto,c_fill_pad,f_auto,q_auto:low,e_improve,w_480,h_280/1874ca1528f1396340d63a54c9acfbf7", 
+        "https://rentpath-res.cloudinary.com/t_rp,g_auto,c_fill_pad,f_auto,q_auto:low,e_improve,w_480,h_280/24c2f4416e2beb937955cbd4b02e7f66", 
+        "https://rentpath-res.cloudinary.com/t_rp,g_auto,c_fill_pad,f_auto,q_auto:low,e_improve,w_480,h_280/6acb265c2add0176ed70178204b29c89", 
+        "https://rentpath-res.cloudinary.com/t_rp,g_auto,c_fill_pad,f_auto,q_auto:low,e_improve,w_480,h_280/a00f1e2e80af4391b386f92151a8ddff", 
+        "https://rentpath-res.cloudinary.com/t_rp,g_auto,c_fill_pad,f_auto,q_auto:low,e_improve,w_480,h_280/cf82089d8185cede1a509623a88bb0b2", 
+        "https://rentpath-res.cloudinary.com/t_rp,g_auto,c_fill_pad,f_auto,q_auto:low,e_improve,w_480,h_280/3e203bdc254cf8b9045022733fcb14bc", 
+        "https://rentpath-res.cloudinary.com/t_rp,g_auto,c_fill_pad,f_auto,q_auto:low,e_improve,w_480,h_280/44e070d358b56dafac89bbc00841e801", 
+        "https://rentpath-res.cloudinary.com/t_rp,g_auto,c_fill_pad,f_auto,q_auto:low,e_improve,w_480,h_280/42901703eacddbf79f8e1fa34ad01d66"
+    ]
+}
+

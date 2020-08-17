@@ -1,0 +1,22 @@
+"apartmentguide": {
+    images,
+    title,
+    street,
+    city,
+    zip,
+    rating (stars),
+    units available,
+    pets,
+    phone,
+    images,
+    floorplans,
+    ratings and reviews,
+    map,
+    amenities,
+    property details,
+    office hours,
+    schools,
+    nearby cities,
+    nearby neighborhoods,
+    related apartments
+}
